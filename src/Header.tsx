@@ -2,10 +2,9 @@ import { FaSpotify } from "react-icons/fa";
 
 interface LandingProps {
     onRedo: () => void;
-    lang: string;
 }
 
-const Header = ( { onRedo, lang }: LandingProps ) => {
+const Header = ( { onRedo}: LandingProps ) => {
     return (
         <header>
             <FaSpotify

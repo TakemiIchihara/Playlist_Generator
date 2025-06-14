@@ -75,7 +75,7 @@ function App() {
           }, 5000)
           // setPage({page: "landing"});
           // setColorOptions(ogColorSet);
-        }} lang={lang}/>
+        }}/>
         <main>
           <AnimatePresence mode="wait">
             <PageTransition
