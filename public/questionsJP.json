@@ -1,0 +1,377 @@
+{
+    "Q1-1": {
+        "_id": 11,
+        "question": "今思う海を想像してみて\nどっちの方があってる?",
+        "answers": [
+            {
+                "_id": "11a",
+                "answer": "人々でにぎわうビーチ",
+                "color": ["FFE7D6", "FFA585", "7CC9CB"],
+                "nextKey": "Q2-1"
+            },
+            {
+                "_id": "11b",
+                "answer": "果てしない紺碧の海中",
+                "color": ["0059B3", "004080", "012345"],
+                "nextKey": "Q2-2",
+                "white": true
+            }
+        ],
+        "colorTheme": "firstPalette"
+    },
+    "Q2-1": {
+        "_id": 21,
+        "question": "どの自然の象徴が今のあなたには近い?",
+        "answers": [
+            {
+                "_id": "21a",
+                "answer": "あたたかく照らす太陽",
+                "color": ["FAB982", "F4AE52", "F4CC7F"],
+                "nextKey": "Q3-1"
+            },
+            {
+                "_id": "21b",
+                "answer": "頬をなでる優しい風",
+                "color": ["6DC2C5", "B8E5D1", "93D4CB"],
+                "nextKey": "Q3-2"
+            },
+            {
+                "_id": "21c",
+                "answer": "夜の帳にかがやく月",
+                "color": ["BBA138", "5C6B8A", "2E3440"],
+                "nextKey": "Q3-3",
+                "white": true
+            }
+        ],
+        "colorTheme": "kiPalette"
+    },
+    "Q2-2": {
+        "_id": 22,
+        "question": "今あなたが包み込まれてしまいそうなものは?",
+        "answers": [
+            {
+                "_id": "22a",
+                "answer": "夕暮れの赤",
+                "color": ["CC7D9A", "F3A76E", "F0DC88"],
+                "nextKey": "Q3-4"
+            },
+            {
+                "_id": "22b",
+                "answer": "夜の常闇",
+                "color": ["0A0A0A", "252525", "141414"],
+                "nextKey": "Q3-5",
+                "white": true
+            }
+        ],
+        "colorTheme": "aiPalette"
+    },
+    "Q3-1": {
+        "_id": 31,
+        "question": "目の前ではしゃぐ子供\n— 手には何を持っている?",
+        "answers": [
+            {
+                "_id": "31a",
+                "answer": "今にも割れそうなふうせん",
+                "color": ["EFCA08", "F4A6A4", "EE7674"],
+                "nextKey": "Q4-1"
+            },
+            {
+                "_id": "31b",
+                "answer": "つばさを広げたた紙ひこうき",
+                "color": ["FFE485", "92BEC8", "90B69F"],
+                "nextKey": "Q4-2"
+            }
+        ]
+    },
+    "Q3-2": {
+        "_id": 32,
+        "question": "24時間後に地球が滅亡します\nどちらの行動を今のあなたならとりたい?",
+        "answers": [
+            {
+                "_id": "32a",
+                "answer": "最後の時まで愛する人とふたりで過ごす",
+                "color": ["1768AC", "5DAAE9", "EE7674"],
+                "nextKey": "Q4-3",
+                "white": true
+            },
+            {
+                "_id": "32b",
+                "answer": "大切な人たちにできるだけ感謝の気持ちを伝える",
+                "color": ["D63230", "FFA62B", "FF5A5F"],
+                "nextKey": "Q4-4",
+                "white": true
+            }
+        ]
+    },
+    "Q3-3": {
+        "_id": 33,
+        "question": "頭の中で木をスケッチしてみて\nどちらの方があなたが今思う木に当てはまる?",
+        "answers": [
+            {
+                "_id": "33a",
+                "answer": "あちこちに実がなるリンゴの木",
+                "color": ["F45D52", "F47066", "FF709B"],
+                "nextKey": "Q4-5",
+                "white": true
+            },
+            {
+                "_id": "33b",
+                "answer": "とがった先が天高く伸びるマツの木",
+                "color": ["779834", "99C149", "A07240"],
+                "nextKey": "Q4-6",
+                "white": true
+            }
+        ]
+    },
+    "Q3-4": {
+        "_id": 34,
+        "question": "トントン、肩をたたかれ\n振り返るとそこに立つ女性の姿\n— その人の印象はどちらの方が近い?",
+        "answers": [
+            {
+                "_id": "34a",
+                "answer": "細身だが立ち方に揺らぎのない人",
+                "color": ["EF8B80", "EED181", "F7EAC5"],
+                "nextKey": "Q4-7"
+            },
+            {
+                "_id": "34b",
+                "answer": "健康的だがよわよわしく笑う人",
+                "color": ["908483", "CBADA4", "A95C68"],
+                "nextKey": "Q4-8",
+                "white": true
+            }
+        ]
+    },
+    "Q3-5": {
+        "_id": 35,
+        "question": "今宵、天体の一部になったら\nあなたは次のうちどれになりそう?",
+        "answers": [
+            {
+                "_id": "35a",
+                "answer": "宇宙の片隅にいる、今にも消えそうな星",
+                "color": ["262103", "908514", "292500"],
+                "nextKey": "Q4-9",
+                "white": true
+            },
+            {
+                "_id": "35b",
+                "answer": "光も闇も飲み込むブラックホール",
+                "color": ["060A1E", "123569", "320C50"],
+                "nextKey": "Q4-10",
+                "white": true
+            },
+            {
+                "_id": "35c",
+                "answer": "漆黒をつき破るメテオ",
+                "color": ["20495B", "8B99A7", "193E61"],
+                "nextKey": "Q4-11",
+                "white": true
+            }
+        ],
+        "colorTheme": "aiPalette"
+    },
+    "Q4-1": {
+        "_id": 41,
+        "question": "ポンッ!\n フェアリーゴッドマザーよ!!\nあなたの気になる人に近づけるよう、動物に変身させてあげるわ!!\nさあ、どちらがよろしい?",
+        "answers": [
+            {
+                "_id": "41a",
+                "answer": "さえずる小さなトリ",
+                "color": ["F7B3CD", "FCB1A6", "FFDCCC"],
+                "white": true
+            },
+            {
+                "_id": "41b",
+                "answer": "無頓着をよそおうネコ",
+                "color": ["FDD8DC", "B6B3E5", "FB6376"],
+                "white": true
+            }
+        ]
+    },
+    "Q4-2": {
+        "_id": 42,
+        "question": "今のあなたの気持ちが色なら,\nどの色?",
+        "answers": [
+            {
+                "_id": "42a",
+                "answer": "みどり",
+                "color": ["008000", "BED8B2", "E5E57A"]
+            },
+            {
+                "_id": "42b",
+                "answer": "きいろ",
+                "color": ["EAD61F", "F4E87C", "FFDE85"]
+            },
+            {
+                "_id": "42c",
+                "answer": "あお",
+                "color": ["2541B2", "89CFF0", "1768AC"]
+            }
+        ],
+        "colorTheme": "rakuPalette"
+    },
+    "Q4-3": {
+        "_id": 43,
+        "question": "今のあなたの気持ちが色なら,\nどの色?",
+        "answers": [
+            {
+                "_id": "43a",
+                "answer": "ちゃいろ",
+                "color": ["874508", "C1630B", "D46D0C"],
+                "white": true
+            },
+            {
+                "_id": "43b",
+                "answer": "だいだいいろ",
+                "color": ["1768AC", "F4963E", "1768AC"],
+                "white": true
+            }
+        ]
+    },
+    "Q4-4": {
+        "_id": 44,
+        "question": "今のあなたの気持ちが色なら,\nどの色?",
+        "answers": [
+            {
+                "_id": "44a",
+                "answer": "みどり",
+                "color": ["719876", "B2BF8A", "88B3BA"]
+            },
+            {
+                "_id": "44b",
+                "answer": "あお",
+                "color": ["2541B2", "D2A80F", "1768AC"]
+            }
+        ]
+    },
+    "Q4-5": {
+        "_id": 45,
+        "question": "今のあなたの気持ちが色なら,\nどの色?",
+        "answers": [
+            {
+                "_id": "45a",
+                "answer": "ピンク",
+                "color": ["F2D9D6", "D7435D", "902742"],
+                "white": true
+            },
+            {
+                "_id": "45b",
+                "answer": "きいろ",
+                "color": ["BD89D2", "F4BB01", "E8D873"],
+                "white": true
+            }
+        ]
+    },
+    "Q4-6": {
+        "_id": 46,
+        "question": "今のあなたの気持ちが色なら,\nどの色?",
+        "answers": [
+            {
+                "_id": "46a",
+                "answer": "くりいろ",
+                "color": ["980B1C", "C53049", "550000"],
+                "white": true
+            },
+            {
+                "_id": "46b",
+                "answer": "濃いピンク",
+                "color": ["FF446A", "FF6EC7", "B8657D"],
+                "white": true
+            },
+            {
+                "_id": "46c",
+                "answer": "バイオレット",
+                "color": ["6D00AF", "FF3FB9", "0298CA"],
+                "white": true
+            }
+        ]
+    },
+    "Q4-7": {
+        "_id": 47,
+        "question": "今のあなたの気持ちが色なら,\nどの色?",
+        "answers": [
+            {
+                "_id": "47a",
+                "answer": "おうどいろ",
+                "color": ["EDCF96", "D8B384", "EDC9AF"]
+            },
+            {
+                "_id": "47b",
+                "answer": "サンゴいろ",
+                "color": ["F7C8A0", "F2B88B", "F3A66E"]
+            }
+        ]
+    },
+    "Q4-8": {
+        "_id": 48,
+        "question": "今のあなたの気持ちが色なら,\nどの色?",
+        "answers": [
+            {
+                "_id": "48a",
+                "answer": "ラベンダーいろ",
+                "color": ["E6B1D6", "BF8BB0", "916494"],
+                "white": true
+            },
+            {
+                "_id": "48b",
+                "answer": "紅色",
+                "color": ["A95C68", "C7837F", "B8737C"],
+                "white": true
+            }
+        ]
+    },
+    "Q4-9": {
+        "_id": 49,
+        "question": "今のあなたの気持ちが色なら,\nどの色?",
+        "answers": [
+            {
+                "_id": "49a",
+                "answer": "グレー",
+                "color": ["252525", "3B4654", "313135"],
+                "white": true
+            },
+            {
+                "_id": "49b",
+                "answer": "あおみどり",
+                "color": ["005F6B", "407B8A", "005B5B"],
+                "white": true
+            }
+        ]
+    },
+    "Q4-10": {
+        "_id": 410,
+        "question": "今のあなたの気持ちが色なら,\nどの色?",
+        "answers": [
+            {
+                "_id": "410a",
+                "answer": "濃いあか",
+                "color": ["371722", "682E3C", "8A3C36"],
+                "white": true
+            },
+            {
+                "_id": "410b",
+                "answer": "濃いあおみどり",
+                "color": ["323549", "306D88", "5F8181"],
+                "white": true
+            }
+        ]
+    }, 
+    "Q4-11": {
+        "_id": 411,
+        "question": "今のあなたの気持ちが色なら,\nどの色?",
+        "answers": [
+            {
+                "_id": "411a",
+                "answer": "こんいろ",
+                "color": ["908514", "193E61", "191970"],
+                "white": true
+            },
+            {
+                "_id": "411b",
+                "answer": "むらさき",
+                "color": ["BBA138", "6F00FF", "425ED2"],
+                "white": true
+            }
+        ]
+    }
+}
