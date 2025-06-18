@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import type { PlaylistsData } from './result-helper';
 import InsertSwiper from './InsertSwiper';
 import { motion } from 'framer-motion';
+import SongTitles from './SongTitles';
+import Bubbles from './Bubbles';
 
 interface  ResultProps {
     playlistId: string;
@@ -47,10 +49,13 @@ const Result = ({ playlistId, onRetake, lang}: ResultProps) => {
 
     return(
         <div id="result-holder">
+            <Bubbles colorData={playlistsData[playlistId].color} count={8}/>
             <div id="title">
                 <p>{lang === "en" ? "The mood you captured is..." : "今の気分は..."}</p>
                 <h1 id="playlist-title">{playlistsData[playlistId].title}</h1>
             </div>
+            
+            <SongTitles songTitles={playlistsData[playlistId].songs} emoji={playlistsData[playlistId].emoji}/>
             
             <motion.iframe 
                 id="main-iframe"

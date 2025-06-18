@@ -32,23 +32,26 @@ function App() {
         return <Landing
             onStartQuiz={() => { 
               loadPage("question");
-              console.log("this is the colorOPtion in landing page", colorOption)
             }} 
             lang={lang} 
           />;
       if(page.page === "question")
         return <Question
-          onFinish={(playlistId) => {
-            loadPage("result");
-            setPlaylistId(playlistId)
-          }}
           onAnswer={(colors: string[], number: number) => {
             setColorOptions(number !== 4 ? colors : ogColorSet);
             setQNumber(number);
           }}
+          onFinish={(playlistId) => {
+            loadPage("result");
+            setPlaylistId(playlistId)
+          }}
           lang={lang}
           />;
-      if(page.page === "result") return <Result playlistId={playlistId} onRetake={() => loadPage("question")} lang={lang} />;
+      if(page.page === "result") 
+        return <Result
+          playlistId={playlistId}
+          onRetake={() => loadPage("question")}
+          lang={lang} />;
       return null;
   }
 
