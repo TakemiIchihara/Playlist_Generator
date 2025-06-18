@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface SongTitlesProps {
     songTitles: string[];
@@ -16,7 +16,7 @@ const shuffleSongs = (array: string[]) => {
     return newArray;
 }
 
-const SongTitles = ({ songTitles, emoji }: SongTitlesProps) => {
+const SongTitles = ({ songTitles }: SongTitlesProps) => {
     const [songs, setSongs] = useState<string[]>([]);
 
     const [elWidths, setElWidths] = useState<number[]>([]);
