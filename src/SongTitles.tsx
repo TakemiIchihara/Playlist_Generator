@@ -30,8 +30,8 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
     useEffect(() => {
         let top = 0;
         const newStyles = songs.map(() => {
-            const fontSize = Math.random() * 24 + 16;
-            const fontWeight = Math.random() * 800 + 300;
+            const fontSize = Math.random() * 24 + 10;
+            const fontWeight = (Math.random() * 5) * 100 + 300;
             top += fontSize + 16;
             return { fontSize: `${fontSize}px` , fontWeight, top: `${top}px`}
         })
@@ -40,11 +40,28 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
     }, [songs])
 
     useEffect(() => {
-        const widths = refs.current.map((ref) => ref?.offsetWidth ?? 0);
-        setElWidths(widths);
-    }, [styles])
+        if(refs.current.length === 0 || styles.length === 0) return;
 
-    console.log("these are the refs ", refs, " and width ", elWidths)
+        const timeoutId = setTimeout(() => {
+            const heights = refs.current.map((ref) => ref?.offsetHeight ?? 0);
+            const widths = refs.current.map((ref) => ref?.offsetWidth ?? 0);
+
+            setElWidths(widths);
+
+            let culmulativeTop = 0;
+            const updateStyles = styles.map((style, i) => {
+                const updateHeights = {
+                    ...style,
+                    top: culmulativeTop + "px"
+                };
+                culmulativeTop += heights[i] + 8;
+                return updateHeights;
+            });
+
+            setStyles(updateStyles);
+        }, 0);
+        return () => clearTimeout(timeoutId);
+    }, [styles])
 
     return (
         <div id="songs-holder">
@@ -52,7 +69,7 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
                 const elWidth = elWidths[i];
 
                 const minDuration = 6;
-                const maxDuration = 11;
+                const maxDuration = 20;
                 const minWidth = Math.min(...elWidths);
                 const maxWidth = Math.max(...elWidths);
 
@@ -60,8 +77,6 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
                 const normalized = (w - minWidth) / (maxWidth - minWidth); // 0 to 1
                 return normalized * (maxDuration - minDuration) + minDuration;
 });
-
-                // console.log("index: ", i," width: ", elWidth)
 
                 return (
                     <motion.div
@@ -76,7 +91,7 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
                         }}
                         initial={{ x: window.innerWidth + 100 }}
                         animate={{ x: -elWidth - 100 }}
-                        transition={{ duration: durations[i], delay: Math.random() * 3 + 1, ease: "linear",repeat: Infinity}}
+                        transition={{ duration: durations[i], delay: Math.random() * 5 + .5, ease: "linear",repeat: Infinity}}
                     >
                         <motion.h2
                             key={`${i}-${song}`}

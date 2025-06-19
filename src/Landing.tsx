@@ -1,25 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { LanguageContext } from "./LanguageContext";
 
 interface  LandingProps {
     onStartQuiz: () => void;
-    lang: string;
 }
 
-const Landing = ({ onStartQuiz, lang }: LandingProps) => {
-    const [title, setTitle] = useState<any>(null);
-
-    useEffect(() => {
-        if(lang) {
-            setTitle( lang === "en" ? "Let's Capture Your Mood<br />With Songs" : `あなたの気分に合った<br />プレイリストを探す`);
-        }
-    }, [lang])
+const Landing = ({ onStartQuiz }: LandingProps) => {
+    const { prefLang } = useContext(LanguageContext);
 
     return(
         <div id="landing-holder">
-            <h1 
-                className="title"
-                dangerouslySetInnerHTML={{__html: title}}></h1>
-            <button className="title button" onClick={onStartQuiz}>{lang === "en" ? "Let's get started" : "クイズを始める"}</button>
+            <h1 className="title" style={{ whiteSpace: "pre-wrap"}}>{prefLang === "en" ? `Let's Capture Your Mood\nWith Songs` : `あなたの気分に合った\nプレイリストを探す`}</h1>
+            <button className="title button" onClick={onStartQuiz}>{prefLang === "en" ? "Let's get started" : "クイズを始める"}</button>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import {  useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Header from './Header';
 import Landing from './Landing';
 import Result from './Result';
@@ -7,15 +7,14 @@ import PageTransition from './PageTransition';
 import Question from './Question';
 import Bubbles from './Bubbles';
 import { AnimatePresence } from 'framer-motion';
-
-// const BubblesGenerator = motion.create(Bubbles)
+import { LanguageContext } from './LanguageContext';
 
 function App() {
   type pageState = { page: "landing" } | { page: "question" } | { page: "result"};
 
   const [page, setPage] = useState<pageState>({ page: "landing" });
   const [nextPageHolder, setNextPageHolder] = useState<pageState | null>(null);
-  const [lang, setLang] = useState<string>("en");
+  const { prefLang, setPrefLang } = useContext(LanguageContext);
   const [playlistId, setPlaylistId] = useState<string>("")
   const [isExiting, setIsExiting] = useState<boolean>(false);
 
@@ -24,17 +23,15 @@ function App() {
   const [QNumber, setQNumber] = useState<number>(1);
 
   useEffect(() => {
-    localStorage.setItem("prefLang", lang);
-  }, [lang])
+    localStorage.setItem("prefLang", prefLang);
+  }, [prefLang])
 
   const renderMain = () => {
       if(page.page === "landing") 
         return <Landing
             onStartQuiz={() => { 
               loadPage("question");
-            }} 
-            lang={lang} 
-          />;
+            }}/>;
       if(page.page === "question")
         return <Question
           onAnswer={(colors: string[], number: number) => {
@@ -45,18 +42,17 @@ function App() {
             loadPage("result");
             setPlaylistId(playlistId)
           }}
-          lang={lang}
           />;
       if(page.page === "result") 
         return <Result
           playlistId={playlistId}
           onRetake={() => loadPage("question")}
-          lang={lang} />;
+        />;
       return null;
   }
 
   const toggleLang = () => {
-    lang === "en" ? setLang("日本語") : setLang("en");
+    setPrefLang( prefLang === "en" ? "jp" : "en");
   }
 
   type pageKey = pageState["page"];
@@ -108,8 +104,8 @@ function App() {
         <footer>
           <small>© 2025 Spotify</small>
           <div id="lang-setting">
-            <small>{lang === "en" ? "Language" : "言語設定"}</small>
-            <button onClick={toggleLang}>{lang}</button>
+            <small>{prefLang === "en" ? "Language" : "言語設定"}</small>
+            <button onClick={toggleLang}>{prefLang}</button>
           </div>
         </footer>
       </div>

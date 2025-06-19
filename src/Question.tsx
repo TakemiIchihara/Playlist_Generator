@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import type { Answer, QuestionType, QuestionData } from "./question-helper";
 import PageTransition from "./PageTransition";
+import { LanguageContext } from "./LanguageContext";
 
 interface  QuestionProps {
-    lang: string;
     onFinish: (playlistId: string) => void;
     onAnswer: (colorOptions: string[], QNumber: number) => void;
 };
 
-const Question = ({ lang, onFinish, onAnswer }: QuestionProps) => {
+const Question = ({ onFinish, onAnswer }: QuestionProps) => {
+    const { prefLang } = useContext(LanguageContext);
     const [questionsData, setQuestionsData] = useState<QuestionData | null>(null);
     const [nextQKey, setNextQKey] = useState<string>("Q1-1");
     const [question, setQuestion] = useState<QuestionType | null>(null)
@@ -18,7 +19,7 @@ const Question = ({ lang, onFinish, onAnswer }: QuestionProps) => {
 
     // load the questions data
     useEffect(() => {
-        fetch(lang === "en" ? '/questions.json' : '/questionsJP.json')
+        fetch(prefLang === "en" ? '/questions.json' : '/questionsJP.json')
             .then(res => {
                 if (!res.ok) throw new Error("Failed to fetch");
                 return res.json();
@@ -27,7 +28,7 @@ const Question = ({ lang, onFinish, onAnswer }: QuestionProps) => {
                 setQuestionsData(data);
             })
             .catch(e => console.error(e));
-    }, [lang]);
+    }, [prefLang]);
 
     useEffect(() => {
         if(questionsData && questionsData[nextQKey])
@@ -83,7 +84,7 @@ const Question = ({ lang, onFinish, onAnswer }: QuestionProps) => {
                             {question.answers.map((answer: Answer) => (
                                 <button
                                     key={answer._id}
-                                    className="question-btns"
+                                    className="question-btns button"
                                     onClick={() => {
                                         handleNextQuestion(answer);
                                         onAnswer(colorOptions(answer), QNumber);
