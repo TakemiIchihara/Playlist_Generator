@@ -12,7 +12,14 @@ export interface QuestionType {
 export interface Answer {
     _id: string;
     answer: string;
-    color: string;
+    color: string[];
     nextKey: string;
     white: string;
+}
+
+export interface ExportProps {
+    nextKey: string;
+    playlistId: string;
+    color: string[];
+    QNumber: number;
 }

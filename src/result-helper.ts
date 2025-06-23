@@ -4,6 +4,7 @@ export interface Playlist {
     color: string[];
     songs: string[];
     emoji: string;
+    "font-color": string;
 }
 
 export interface PlaylistsData {

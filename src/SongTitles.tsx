@@ -65,18 +65,18 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
 
     return (
         <div id="songs-holder">
-            {songs.map((song, i) => {
+            {songs.slice(0, 6).map((song, i) => {
                 const elWidth = elWidths[i];
 
-                const minDuration = 6;
-                const maxDuration = 20;
+                const minDuration = 10;
+                const maxDuration = 50;
                 const minWidth = Math.min(...elWidths);
                 const maxWidth = Math.max(...elWidths);
 
                 const durations = elWidths.map((w) => {
                 const normalized = (w - minWidth) / (maxWidth - minWidth); // 0 to 1
                 return normalized * (maxDuration - minDuration) + minDuration;
-});
+                });
 
                 return (
                     <motion.div
@@ -93,16 +93,7 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
                         animate={{ x: -elWidth - 100 }}
                         transition={{ duration: durations[i], delay: Math.random() * 5 + .5, ease: "linear",repeat: Infinity}}
                     >
-                        <motion.h2
-                            key={`${i}-${song}`}
-                            ref={(el) => {refs.current[i] = el}}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0}}
-                            transition={{ duration: 1 }}
-                        >
-                            {song}
-                        </motion.h2>
+                        <h2 ref={(el) => {refs.current[i] = el}}>{song}</h2>
                     </motion.div>)
             })}
         </div>

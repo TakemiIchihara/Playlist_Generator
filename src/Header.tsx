@@ -1,4 +1,4 @@
-import { FaSpotify } from "react-icons/fa";
+import { FaRainbow } from "react-icons/fa";
 
 interface LandingProps {
     onRedo: () => void;
@@ -7,10 +7,12 @@ interface LandingProps {
 const Header = ( { onRedo}: LandingProps ) => {
     return (
         <header>
-            <FaSpotify
-                id="logo" 
-                onClick={onRedo}
-            />
+            <div id="header-holder" onClick={onRedo}>
+                <h1>TKM</h1>
+                <FaRainbow
+                    id="logo" 
+                />
+            </div>
         </header>
     )
 }
