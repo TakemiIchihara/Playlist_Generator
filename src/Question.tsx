@@ -62,8 +62,8 @@ const Question = ({ onFinish, onAnswer, exportProps }: QuestionProps) => {
 			{ question && (
 				<div className="question-holder">
 					<div className="question">
-						<h1 className="q-title">{prefLang === "en"? "Question" : "問題" }: {QNumber}</h1>
-						<h2 className="question-title">{question.question.split("\n").map((line, index) => (<span style={{ display: "block"}} key={index}>{line}</span>))}</h2>
+						<h2 className="q-number">{prefLang === "en"? "Question" : "問題" } {QNumber}</h2>
+						<h2>{question.question.split("\n").map((line, index) => (<span style={{ display: "block"}} key={index}>{line}</span>))}</h2>
 					</div>
 					<div className="btns-holder">
 						{question.answers.map((answer: Answer) => (

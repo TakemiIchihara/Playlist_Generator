@@ -21,7 +21,7 @@
     },
     "Q2-1": {
         "_id": 21,
-        "question": "Which symbol of nature is closest to how you feel right now?",
+        "question": "Which symbol of nature is closest to\nhow you feel right now?",
         "answers": [
             {
                 "_id": "21a",
@@ -37,7 +37,7 @@
             },
             {
                 "_id": "21c",
-                "answer": "A moon shining through the midnight veil",
+                "answer": "Stars shining through the midnight veil",
                 "color": ["BBA138", "5C6B8A", "2E3440"],
                 "nextKey": "Q3-3",
                 "white": true
@@ -47,7 +47,7 @@
     },
     "Q2-2": {
         "_id": 22,
-        "question": "Which feeling is about to swallow you whole?",
+        "question": "Which feeling is about to\nswallow you whole?",
         "answers": [
             {
                 "_id": "22a",
@@ -67,11 +67,11 @@
     },
     "Q3-1": {
         "_id": 31,
-        "question": "A child is playing in front of you — what are they holding?",
+        "question": "A child is playing in front of you\n—what are they holding?",
         "answers": [
             {
                 "_id": "31a",
-                "answer": "A balloon that looks like it could pop at any moment",
+                "answer": "A balloon that could pop at any moment",
                 "color": ["EFCA08", "F4A6A4", "EE7674"],
                 "nextKey": "Q4-1"
             },
@@ -89,14 +89,14 @@
         "answers": [
             {
                 "_id": "32a",
-                "answer": "stay with the one you would cherish till the very end",
+                "answer": "Stay with the one you love till the end",
                 "color": ["1768AC", "5DAAE9", "EE7674"],
                 "nextKey": "Q4-3",
                 "white": true
             },
             {
                 "_id": "32b",
-                "answer": "show gratitude to as many people you love as possible",
+                "answer": "Thank as many you love as possible",
                 "color": ["D63230", "FFA62B", "FF5A5F"],
                 "nextKey": "Q4-4",
                 "white": true
@@ -105,18 +105,18 @@
     },
     "Q3-3": {
         "_id": 33,
-        "question": "Imagine you're sketching a tree in your mind.\nWhich reflects the most with the one you had?",
+        "question": "Picture a tree in your mind\nWhich of the two best describes\nthe one you imagined?",
         "answers": [
             {
                 "_id": "33a",
-                "answer": "Like an apple tree, bearing fruits here and there",
+                "answer": "Like an apple tree, bearing lots of fruits",
                 "color": ["F45D52", "F47066", "FF709B"],
                 "nextKey": "Q4-5",
                 "white": true
             },
             {
                 "_id": "33b",
-                "answer": "Like a pine tree, pointy top reaching for the sky",
+                "answer": "Like a pine, pointed tip reaching the sky",
                 "color": ["779834", "99C149", "A07240"],
                 "nextKey": "Q4-6",
                 "white": true
@@ -125,17 +125,17 @@
     },
     "Q3-4": {
         "_id": 34,
-        "question": "You feel a tap on your shoulder.\nA woman stands before you\n— what kind of presence does she carry?",
+        "question": "You feel a tap on your shoulder.\nA woman stands before you\n—what kind of presence does she carry?",
         "answers": [
             {
                 "_id": "34a",
-                "answer": "A gentle figure with a soft and delicate aura",
+                "answer": "Slender, yet she stands unwavering",
                 "color": ["EF8B80", "EED181", "F7EAC5"],
                 "nextKey": "Q4-7"
             },
             {
                 "_id": "34b",
-                "answer": "A lively woman, glowing with confidence and spirit",
+                "answer": "Vigorous, yet her smile is faint",
                 "color": ["908483", "CBADA4", "A95C68"],
                 "nextKey": "Q4-8",
                 "white": true
@@ -148,21 +148,21 @@
         "answers": [
             {
                 "_id": "35a",
-                "answer": "A faint star twinkling on the edge of the universe",
+                "answer": "A faint star twinkling on the edge",
                 "color": ["262103", "908514", "292500"],
                 "nextKey": "Q4-9",
                 "white": true
             },
             {
                 "_id": "35b",
-                "answer": "A black hole that devours light and sound",
+                "answer": "A black hole devouring light and sound",
                 "color": ["060A1E", "123569", "320C50"],
                 "nextKey": "Q4-10",
                 "white": true
             },
             {
                 "_id": "35c",
-                "answer": "A meteor tearing through the silence of night",
+                "answer": "A meteor shooting through the night",
                 "color": ["20495B", "8B99A7", "193E61"],
                 "nextKey": "Q4-11",
                 "white": true
@@ -172,19 +172,17 @@
     },
     "Q4-1": {
         "_id": 41,
-        "question": "Boom! Your Fairy Godmother is here!!\nShe offers to turn you into an animal\nto get closer to the one you are in love with.\nWhich would you choose?",
+        "question": "Poof! I'm Fairy Godmother!\nI can turn you into an animal to get\ncloser to the one you have feelings for\nWhich would you choose?",
         "answers": [
             {
                 "_id": "41a",
                 "answer": "A chirping little bird",
-                "color": ["F7B3CD", "FCB1A6", "FFDCCC"],
-                "white": true
+                "color": ["F7B3CD", "FCB1A6", "FFDCCC"]
             },
             {
                 "_id": "41b",
                 "answer": "A nonchalant acting cat",
-                "color": ["FDD8DC", "B6B3E5", "FB6376"],
-                "white": true
+                "color": ["FDD8DC", "B6B3E5", "FB6376"]
             }
         ]
     },

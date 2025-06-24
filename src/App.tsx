@@ -59,16 +59,9 @@ function App() {
         return <Result
           playlistId={playlistId}
           onRetake={() => {
-            setPage({page: "loading"});
-
-            setTimeout(() => {
-              window.scrollTo({ top: 0 })
-              setQuestionProps(undefined);
-              setPlaylistId("");
-              setTimeout(() => {
-                setPage({page: "question"});
-              }, 1000)
-            }, 3000)
+            loadPage("question");
+            setQuestionProps(undefined);
+            setPlaylistId("");
             }}
         />;
       } else {
@@ -96,11 +89,8 @@ function App() {
   return (
       <div id="app-screen">
         <Header onRedo={() => {
-          setPage({page: "loading"});
-          setTimeout(() => {
-            setPage({ page: "landing"});
-            setQuestionProps(undefined);
-          }, 3000)
+          loadPage("landing");
+          setQuestionProps(undefined);
         }}/>
         <main id="main">
           <AnimatePresence mode="wait">
