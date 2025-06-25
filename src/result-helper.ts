@@ -1,5 +1,6 @@
 export interface Playlist {
     link: string;
+    apple: string;
     title: string;
     color: string[];
     songs: string[];

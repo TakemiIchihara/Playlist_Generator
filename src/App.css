@@ -141,19 +141,20 @@ main,.loading-holder  {
 #playlist-title {
 	font-family: "Tilt Warp";
 	font-weight: 500;
-	font-size: 48px;
-	margin-left: 40px;
+	font-size: 64px;
 	margin-top: 18px;
+	text-align: center;
 }
 #main-iframe {
 	height: 48vh;
-	width: 88vw;
+	width: 93vw;
 	border: none;
 	margin-top: 5vh;
 	opacity: .9 !important;
 }
 #retake-btn {
-	margin: 48px;
+	margin-top: 88px;
+	margin-bottom: 56px;
 }
 
 /* songs-holder */
@@ -164,9 +165,7 @@ main,.loading-holder  {
 	top: 88px;
 	bottom: 0;
 	z-index: 0;
-	overflow-x: hidden;
-	overflow-y: visible;
-	filter: blur(1.3px);
+	filter: blur(2.3px);
 }
 .song-name {
 	will-change: transform;
@@ -193,21 +192,28 @@ main,.loading-holder  {
 	height: 16px;
 }
 #swiper-holder {
-	padding: 32px 0;
-	background-color: #6969697f;
+	padding: 24px 0 32px 0;
+	/* background-color: #6969697f; */
 	display: flex;
 	flex-direction: column;
 }
 .swiper {
 	width: 100vw;
-	height: 192px;
+	height: 312px;
 }
 .swiper-slide {
-	position: relative;
-	overflow: hidden;
-	border-radius: 8px 8px;
+	/* position: relative;
+	overflow: hidden; */
+	/* border-radius: 8px 8px; */
 	border: unset;
 	color: var(--white)
+}
+.swiper-slide-bg {
+	position: relative;
+	overflow: hidden;
+	height: 192px;
+	width: 100%;
+	border-radius: 8px 8px;
 }
 .emoji-bg {
 	transform: rotate(-20deg);
@@ -240,16 +246,33 @@ main,.loading-holder  {
 	position: absolute;
 	width: 80px;
 	height: 80px;
-	bottom: 10px;
-	right: 20px;
+	top: 88px;
+	right: 22px;
 	border: unset;
 	transform: scale(1.5) rotate(15deg);
-	/* width: 370px;
-	height: 352px; */
 }
 .swiper-slide-shadow-coverflow {
 	border-radius: 8px 8px;
+	height: 192px !important;
 	background-image: unset;
+}
+.links {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	margin-top: 24px;
+}
+.link-btns {
+	width: 128%;
+	height: 40px;
+	border-radius: 20px 20px;
+	border: unset;
+}
+.link-btns a {
+	text-decoration: none;
+	color: black;
 }
 
 

@@ -2,6 +2,7 @@
     "11a21a31a41a": {
         "link": "3yyuiUncXKXbPJZQGcgy3N",
         "title": "Infatuated",
+        "apple": "RRbVLR7Im3GzWG",
         "color": ["F7B3CD", "FCB1A6", "FFDCCC"],
         "songs": ["Love at First Sight", "CHER.R.RY", "HEARTFIRST", "OMG", "Cupid", "Call Me Maybe", "Fantasy", "Someone To Call My Lover"],
         "emoji": "🩷"
@@ -9,55 +10,63 @@
     "11a21a31a41b": {
         "link": "7KRrBS8ZFwz3T0tQZtIBrT",
         "title": "Limerence",
+        "apple": "6mo4rMWS8B6lp6",
         "color": ["FDD8DC", "B6B3E5", "FB6376"],
         "songs": ["Strategy", "Bubble Pop Electric", "Mr.Vampire", "Espresso", "Say So", "34+35", "LUNCH", "Lovefool"],
         "emoji": "💗"
     },
     "11a21a31b42a": {
         "link": "3BMVdIB6DJNF40kU8bqIID",
+        "apple": "6mo4ZqmU8B6lp6",
         "title": "Energy",
         "color": ["008000", "BED8B2", "E5E57A"],
-        "songs": [],
-        "emoji": "",
+        "songs": ["Dreamlover", "Soak Up the Sun", "Runaway", "Circle Around This Town", "Anti-Hero", "CAN'T STOP THE FEELING", "ドライブ", "Underneath It All"],
+        "emoji": "🪴",
         "font-color": "dark"
     },
     "11a21a31b42b": {
         "link": "3riVD6NmRdGbYkvWHJ2Ffs",
+        "apple": "BNA6zq3te123y2",
         "title": "SunBeams",
         "color": ["EAD61F", "F4E87C", "FFDE85"],
-        "songs": [],
+        "songs": ["Morning Glory", "Mercy Mercy Me (The Ecology)", "BIRDS OF A FEATHER", "やさしさに包まれたなら", "Honeysuckle Rose", "Top Of The World", "Waiting On the World to Change", "Un après-midi à Paris"],
         "emoji": "☀️"
     },
     "11a21a31b42c": {
         "link": "0wR04bjo4f2hvc94zWCx8V",
-        "title": "Chill",
+        "apple": "RRbVLpNum3GzWG",
+        "title": "Chillin",
         "color": ["2541B2", "89CFF0", "1768AC"],
-        "songs": [],
-        "emoji": ""
+        "songs": ["Across the Room", "Come With Me", "Bubble Gum", "If I Had Eyes", "That's When", "New Light", "comethru", "One On One"],
+        "emoji": "🌊"
     },
     "11a21b32a43a": {
         "link": "3bgf6hiU8O2UeyGUI5svir",
-        "title": "Hanryo",
+        "apple": "vxy6JYYIWz0lm0",
+        "title": "Serendipity",
         "color": ["874508", "C1630B", "D46D0C"],
-        "songs": [],
-        "emoji": ""
+        "songs": ["星影の小径", "Lovin' You", "All Is Found", "Ain't Got Nothing On You", "Kiss of Life", "Love Will Keep Us Alive", "You Make Me Feel Brand New"],
+        "emoji": "🧡"
     },
     "11a21b32a43b": {
         "link": "2W1chUD90s19ioaG0azLfY",
+        "apple": "leyl8L6hMjogAo",
         "title": "Reverie",
         "color": ["1768AC", "F4963E", "1768AC"],
-        "songs": [],
-        "emoji": ""
+        "songs": ["You Give Good Love", "Beautiful Me", "Play It Again", "Nobody's Love", "芽ばえ", "How Sweet It is (To Be Loved By You)", "Teenage Dream", "Stop Me From Falling"],
+        "emoji": "🪷"
     },
     "11a21b32b44a": {
         "link": "0WmMh5dYGfUNGgZ5Kk3fVK",
+        "apple": "vxy6D4BuWz0lm0",
         "title": "Peace",
         "color": ["719876", "B2BF8A", "88B3BA"],
-        "songs": [],
-        "emoji": ""
+        "songs": ["I GOT YOU", "There's Got to Be a Way", "grace", "Rise Up (Lazarus)", "You'll Be In My Heart", "'Till You Can't", "Man In The Mirror", "僕の街へ"],
+        "emoji": "🕊️"
     },
     "11a21b32b44b": {
         "link": "57hNsL2tcquTX8Zr1nxfPK",
+        "apple": "AkAmV0Ncx2GWaG",
         "title": "Ikigai",
         "color": ["2541B2", "D2A80F", "1768AC"],
         "songs": ["Most of Us Are Sad", "Reminders", "紅い花", "You're Only Lonely", "Hero", "満ちてゆく", "いのちの歌", "Last Night, Good Night"],
@@ -65,41 +74,47 @@
     },
     "11a21c33a45a": {
         "link": "6MXZrZwxk4J681qRQoUQ7F",
-        "title": "To-Sui",
+        "apple": "AkAmz7ysx2GWaG",
+        "title": "Intimacy",
         "color": ["F2D9D6", "D7435D", "902742"],
-        "songs": [],
-        "emoji": ""
+        "songs": ["I Wanna Be Your Man", "(Lay Your Head On My) Pillow", "Bed Chem", "Underneath The Stars", "テレフォンナンバー", "In My Room", "At Your Best (You Are Love)", "中央フリーウェイ"],
+        "emoji": "✨"
     },
     "11a21c33a45b": {
         "link": "6g1P2dzczebJ4m0Dyxj0DI",
+        "apple": "PDb4NbBFeLgPXg",
         "title": "Luxurious",
         "color": ["BD89D2", "F4BB01", "E8D873"],
-        "songs": [],
-        "emoji": ""
+        "songs": ["That's The Way Love Goes", "陽のあたる場所", "Luxurious", "MOONLIGHT SUNRISE", "Midnight Pretenders", "Cinema", "Like That", "スローモーション"],
+        "emoji": "🌹"
     },
     "11a21c33b46a": {
         "link": "3fpZeYWGtuimCuGC6Rmgas",
+        "apple": "vxy6D83TWz0lm0",
         "title": "Anthem",
         "color": ["980B1C", "C53049", "550000"],
-        "songs": [],
-        "emoji": ""
+        "songs": ["I'm Good", "Mon Cheri", "We Found Love", "I don't Wanna Wait", "Till The World Ends", "Eve, Psyche & The Bluebeard's wife", "Odo", "Rock DJ"],
+        "emoji": "❤️‍🔥"
     },
     "11a21c33b46b": {
         "link": "6knWMpVQd4He53SMjC5sLR",
+        "apple": "6mo4zqyt8B6lp6",
         "title": "Opulence",
         "color": ["FF446A", "FF6EC7", "B8657D"],
-        "songs": [],
+        "songs": ["yes, and?", "CRAZY", "Whiplash", "Call Me Mother", "It's Like That", "Guess", "My Prerogative", "Can't Get You Out of My Head"],
         "emoji": "💅"
     },
     "11a21c33b46c": {
         "link": "59iFCB8PVxHqJLPqV8caKk",
-        "title": "Odore",
+        "apple": "LdbqDM3T2xzjKz",
+        "title": "Disco",
         "color": ["6D00AF", "FF3FB9", "0298CA"],
         "songs": ["Club Tropicana", "マスカレード", "On The Radio", "Let's Groove", "Spinning Around", "I'm Every Woman", "All For You", "Dancing Queen", "Stayin' Alive"],
         "emoji": "🕺"
     },
     "11b22a34a47a": {
         "link": "3yLGQiDaPUqpxLNjbRXile",
+        "apple": "PDb42y4CeLgPXg",
         "title": "Gwenchana",
         "color": ["EDCF96", "D8B384", "EDC9AF"],
         "songs": ["First Love", "The Last In Love", "青いエアメイル", "Butterfly", "真夏の果実", "Desperado", "Butterfly", "All Too Well"],
@@ -107,6 +122,7 @@
     },
     "11b22a34a47b": {
         "link": "2KHtT6YAz5dBSHi2TMbip6",
+        "apple": "AkAmVo9Hx2GWaG",
         "title": "Adieu",
         "color": ["F7C8A0", "F2B88B", "F3A66E"],
         "songs": ["Ditto", "Always Be My Baby", "とどかぬ想い", "You are Everything", "ノーサイド", "Who's Holding Donna Now?", "twilight zone", "Highway Don't Care"],
@@ -115,13 +131,15 @@
     },
     "11b22a34b48a": {
         "link": "6MmM2kZdVZPw67bkCB7Ck5",
-        "title": "Prima Donna",
+        "apple": "vxy6ZoYFWz0lm0",
+        "title": "PrimaDonna",
         "color": ["E6B1D6", "BF8BB0", "916494"],
-        "songs": [],
-        "emoji": ""
+        "songs": ["役者", "Please Please Please", "Now You're Not Here", "Before You Walk Out of My Life", "ラチエン通りのシスター", "Out of My Head", "ラヴ・イズ・オーヴァー", "TAXI"],
+        "emoji": "💋"
     },
     "11b22a34b48b": {
         "link": "5dHYFN4fzEwy80I819geph",
+        "apple": "6mo4124i8B6lp6",
         "title": "Heartaches",
         "color": ["A95C68", "C7837F", "B8737C"],
         "songs": ["Cruel Summer", "悲しみがとまらない I Can't Stop The Lonliness", "Since U Been Gone", "Good Luck, Babe!", "End Of The Road", "そして僕は途方に暮れる", "Heartbreaker", "Superman"],
@@ -129,6 +147,7 @@
     },
     "11b22b35a49a": {
         "link": "6pW2uzVl9EESjkby2iXkeR",
+        "apple": "vxy6Ke6tWz0lm0",
         "title": "Shiawase",
         "color": ["252525", "3B4654", "313135"],
         "songs": ["My All", "Whiskey Lullaby", "WILDFLOWER", "Careless Whisper", "酒と泪と男と女", "Saving All My Love", "I Can't Tell You Why", "Something About Us"],
@@ -136,37 +155,42 @@
     },
     "11b22b35a49b": {
         "link": "6ySlx2OOGITtLiPcPTGApo",
+        "apple": "vxy6JLxuWz0lm0",
         "title": "Ephemeral",
         "color": ["005F6B", "407B8A", "005B5B"],
-        "songs": ["We Belong Together", "Oh No, Oh Yes", "Cupid", "don't wanna break up again", "Doin' Just Fine", "Dont't Smile", "そばにいるね"],
+        "songs": ["We Belong Together", "Oh No, Oh Yes", "Cupid", "don't wanna break up again", "Doin' Just Fine", "Don't Smile", "そばにいるね"],
         "emoji": "🦋"
     },
     "11b22b35b410a": {
         "link": "6og21AHGZJVIspuZQEGSSi",
-        "title": "Calamitous",
+        "apple": "BNA6XWjCe123y2",
+        "title": "Karma",
         "color": ["371722", "682E3C", "8A3C36"],
-        "songs": [],
-        "emoji": ""
+        "songs": ["Don't Speak", "死ぬのがいいわ", "Complicated", "Slow Dancing in a Burning Room", "Kill Bill", "二時間だけのバカンス", "Selfish", "CRY FOR ME"],
+        "emoji": "🪾"
     },
     "11b22b35b410b": {
         "link": "4B2kUF69D5cZdNzrsrqlh5",
-        "title": "Comtemporary",
+        "apple": "ZmbljkJfV0qRGq",
+        "title": "Antithesis",
         "color": ["323549", "306D88", "5F8181"],
-        "songs": [],
-        "emoji": ""
+        "songs": ["God is a woman", "トーキョーゲットー", "A Woman In a Man's World", "Man Eater", "Passionfruite", "MILLION DOLLAR BABY", "愛の言霊", "One of These Nights"],
+        "emoji": "🐏"
     },
     "11b22b35c411a": {
         "link": "61daCgbZDaWdDl0xiSjYuZ",
-        "title": "Adieu",
+        "apple": "b3b8YW4FKyV5gV",
+        "title": "Getaway",
         "color": ["908514", "193E61", "191970"],
         "songs": ["プラスティック・ラブ", "Perfect Night", "真夜中のドア 〜 Stay with Me", "i'm so tired...", "ちゅ、多様性。"],
-        "emoji": "🌕"
+        "emoji": "🌘"
     },
     "11b22b35c411b": {
         "link": "6joLJslhMg1l4Y9Sy24Y20",
-        "title": "Ranbu",
+        "apple": "vxy6Kz3FWz0lm0",
+        "title": "Mortal",
         "color": ["BBA138", "6F00FF", "425ED2"],
-        "songs": [],
-        "emoji": ""
+        "songs": ["Celebrate", "Toi Et Moi", "I'm Free", "Damce Catharsis", "Lose Yourself to Dance", "月光潤色ガール", "Promises, Promises", "About Damn Time"],
+        "emoji": "🪐"
     }
 }

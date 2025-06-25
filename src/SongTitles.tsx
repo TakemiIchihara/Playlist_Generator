@@ -23,7 +23,6 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
 		const [fontStyles, setFontStyles] = useState<{ fontSize: string, fontWeight: number }[]>([]);
 		const [positionStyles, setPositionStyles] = useState<{ top: string, left: string }[]>([]);
     const refs = useRef<(HTMLHeadingElement | null)[]>([]);
-		const [parentHeight, setParentHeight] = useState<string>("");
 
 		useEffect(() => {
        setSongs(shuffleSongs(songTitles));
@@ -33,8 +32,8 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
 		const newFontStyles = useMemo(() => {
 			console.log("this is triggered by songs");
 			return songs.map(() => {
-				const fontSize = Math.floor(Math.random() * 14 + 10);
-				const fontWeight = (Math.random() * 5) * 100 + 300;
+				const fontSize = Math.floor(Math.random() * 10 + 14);
+				const fontWeight = Math.floor((Math.random() * 8) * 100 + 100);
 				return { fontSize: `${fontSize}px` , fontWeight };
 			});
 		}, [songs]);
@@ -56,8 +55,8 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
 			setElWidths(widths);
 
 			const newPositionStyles = songs.map((_, i) => {
-				const top = culmulativeTop + "px";
-				culmulativeTop += heights[i] + 8;
+				const top = culmulativeTop;
+				culmulativeTop += heights[i] + 24;
 
 				if(i % 2 == 1) {
 					left = Math.random() * 80 + "px";
@@ -65,22 +64,20 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
 					left = Math.random() * 100 + 400 + "px";
 				}
 				
-				return { top: top, left: left }
+				return { top: top + "px", left: left + "px" }
 			})
 			console.log("this is triggered by fontStyles");
-
-			setParentHeight(culmulativeTop + "px");
 
 			setPositionStyles(newPositionStyles);
 
     }, [fontStyles])
 
     return (
-        <div id="songs-holder" style={{ height: parentHeight }}>
+        <div id="songs-holder">
             {songs.map((song, i) => { // songs.slice(0, 6).map in case wanting to limit the number displayed
                 const elWidth = elWidths[i];
 
-                const minDuration = 10;
+                const minDuration = 18;
                 const maxDuration = 50;
                 const minWidth = Math.min(...elWidths);
                 const maxWidth = Math.max(...elWidths);
