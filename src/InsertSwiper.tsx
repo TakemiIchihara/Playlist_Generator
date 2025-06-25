@@ -55,12 +55,12 @@ const InsertSwiper = ( { playlistsData, savedPlaylistsIds }: InsertSwiperProps) 
                         <div className="swiper-content"style={{ position: "relative", zIndex: 1 }}>
                         <h1 style={{ fontSize: "40px" }}>{data.title}</h1>
                         </div>
-                        {/* {index === activeIndex && (
+                        {index === activeIndex && (
                             <iframe
                                 src={`https://open.spotify.com/embed/playlist/${data.link}?utm_source=generator`}
                                 allow="encrypted-media"
                             />)
-                        } */}
+                        }
                     </SwiperSlide>
                 );
             })}

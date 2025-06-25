@@ -130,9 +130,9 @@ main,.loading-holder  {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-top: 48px;
 }
 #title {
-	margin-top: 48px;
 	width: 100vw;
 }
 #title p {
@@ -143,12 +143,14 @@ main,.loading-holder  {
 	font-weight: 500;
 	font-size: 48px;
 	margin-left: 40px;
+	margin-top: 18px;
 }
 #main-iframe {
 	height: 48vh;
 	width: 88vw;
 	border: none;
-	margin-top: 24vh;
+	margin-top: 5vh;
+	opacity: .9 !important;
 }
 #retake-btn {
 	margin: 48px;
@@ -159,7 +161,7 @@ main,.loading-holder  {
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 200px;
+	top: 88px;
 	bottom: 0;
 	z-index: 0;
 	overflow-x: hidden;
@@ -167,7 +169,7 @@ main,.loading-holder  {
 	filter: blur(1.3px);
 }
 .song-name {
-will-change: transform;
+	will-change: transform;
 }
 
 /* swiper */
@@ -269,3 +271,13 @@ footer button {
 	font-size: 1rem;
 	width: 3rem;
 }
+
+
+@keyframes toLeft {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }

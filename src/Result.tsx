@@ -58,8 +58,20 @@ const Result = ({ playlistId, onRetake}: ResultProps) => {
 				src={iframeSrc}
 				initial={{ opacity: 0, y: 20}}
 				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 1.5, delay: .5}}
+				transition={{ duration: 1.5, delay: 1}}
 			/>
+
+			{/* <div style={{ background: `linear-gradient(135deg, #${playlistsData[playlistId].color[0]}, #${playlistsData[playlistId].color[1]}, #${playlistsData[playlistId].color[2]})`, width: "200px", height: "200px", position: "absolute", left: 0, top: "48px", overflow: "hidden", borderRadius: "5px 5px", transform: "rotate(-15deg)"}}>
+				<div className="emoji-bg">
+					{ Array.from({ length: 4 }).map((_, rowI) => (
+							<div className="emoji-bg-row" key={rowI}>
+									{ Array.from({ length: 5 }).map((_, colI) => (
+											<span key={colI}>{playlistsData[playlistId].emoji}</span>
+									))}
+							</div>
+					))}
+				</div>
+			</div> */}
 			
 			<DisplaySavedPlaylists playlistsData={playlistsData} />
 

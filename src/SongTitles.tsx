@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 
 interface SongTitlesProps {
     songTitles: string[];
@@ -20,52 +20,64 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
     const [songs, setSongs] = useState<string[]>([]);
 
     const [elWidths, setElWidths] = useState<number[]>([]);
-    const [styles, setStyles] = useState<{ fontSize: string, fontWeight: number, top: string}[]>([]);
+		const [fontStyles, setFontStyles] = useState<{ fontSize: string, fontWeight: number }[]>([]);
+		const [positionStyles, setPositionStyles] = useState<{ top: string, left: string }[]>([]);
     const refs = useRef<(HTMLHeadingElement | null)[]>([]);
+		const [parentHeight, setParentHeight] = useState<string>("");
 
-    useEffect(() => {
+		useEffect(() => {
        setSongs(shuffleSongs(songTitles));
+			 console.log("this is triggered by songTitles");
     }, [songTitles]);
 
+		const newFontStyles = useMemo(() => {
+			console.log("this is triggered by songs");
+			return songs.map(() => {
+				const fontSize = Math.floor(Math.random() * 14 + 10);
+				const fontWeight = (Math.random() * 5) * 100 + 300;
+				return { fontSize: `${fontSize}px` , fontWeight };
+			});
+		}, [songs]);
+
+		useEffect(() => {
+			setFontStyles(newFontStyles);
+			console.log("this is triggered by newFontStyles");
+		}, [newFontStyles]);
+
     useEffect(() => {
-        let top = 0;
-        const newStyles = songs.map(() => {
-            const fontSize = Math.random() * 24 + 10;
-            const fontWeight = (Math.random() * 5) * 100 + 300;
-            top += fontSize + 16;
-            return { fontSize: `${fontSize}px` , fontWeight, top: `${top}px`}
-        })
+			if(refs.current.length === 0 || fontStyles.length === 0) return;
 
-        setStyles(newStyles);
-    }, [songs])
+			let left: string;
+			let culmulativeTop = 0;
 
-    useEffect(() => {
-        if(refs.current.length === 0 || styles.length === 0) return;
+			const heights = refs.current.map((ref) => ref?.offsetHeight ?? 0);
+			const widths = refs.current.map((ref) => ref?.offsetWidth ?? 0);
 
-        const timeoutId = setTimeout(() => {
-            const heights = refs.current.map((ref) => ref?.offsetHeight ?? 0);
-            const widths = refs.current.map((ref) => ref?.offsetWidth ?? 0);
+			setElWidths(widths);
 
-            setElWidths(widths);
+			const newPositionStyles = songs.map((_, i) => {
+				const top = culmulativeTop + "px";
+				culmulativeTop += heights[i] + 8;
 
-            let culmulativeTop = 0;
-            const updateStyles = styles.map((style, i) => {
-                const updateHeights = {
-                    ...style,
-                    top: culmulativeTop + "px"
-                };
-                culmulativeTop += heights[i] + 8;
-                return updateHeights;
-            });
+				if(i % 2 == 1) {
+					left = Math.random() * 80 + "px";
+				} else {
+					left = Math.random() * 100 + 400 + "px";
+				}
+				
+				return { top: top, left: left }
+			})
+			console.log("this is triggered by fontStyles");
 
-            setStyles(updateStyles);
-        }, 0);
-        return () => clearTimeout(timeoutId);
-    }, [styles])
+			setParentHeight(culmulativeTop + "px");
+
+			setPositionStyles(newPositionStyles);
+
+    }, [fontStyles])
 
     return (
-        <div id="songs-holder">
-            {songs.slice(0, 6).map((song, i) => {
+        <div id="songs-holder" style={{ height: parentHeight }}>
+            {songs.map((song, i) => { // songs.slice(0, 6).map in case wanting to limit the number displayed
                 const elWidth = elWidths[i];
 
                 const minDuration = 10;
@@ -83,11 +95,11 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
                         key={`${i}`}
                         className="song-name"
                         style={{
-                            display: "inline-block",
                             position: "absolute",
                             whiteSpace: "nowrap",
                             opacity: ".8",
-                            ...styles[i]
+                            ...fontStyles[i],
+														...positionStyles[i]
                         }}
                         initial={{ x: window.innerWidth + 100 }}
                         animate={{ x: -elWidth - 100 }}
@@ -99,5 +111,6 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
         </div>
     );
 }
+
 
 export default SongTitles;
