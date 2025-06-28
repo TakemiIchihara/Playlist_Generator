@@ -86,6 +86,8 @@ function App() {
     }, 3000)
   }
 
+  console.log("bubbleColor", bubbleColor)
+
   return (
       <div id="app-screen">
         <Header onRedo={() => {
@@ -113,7 +115,7 @@ function App() {
           <small>© 2025 TkmIchihara</small>
           <div id="lang-setting">
             <small>{prefLang === "en" ? "Language" : "言語設定"} <span className='bold'>:</span></small>
-            <button onClick={() => setPrefLang( prefLang === "en" ? "jp" : "en")}>{prefLang}</button>
+            <button onClick={() => setPrefLang( prefLang === "en" ? "jp" : "en")}>{prefLang === "en" ? prefLang : "日本語"}</button>
           </div>
         </footer>
       </div>

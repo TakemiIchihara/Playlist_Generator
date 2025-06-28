@@ -6,6 +6,7 @@ import type { Playlist, PlaylistsData, SavedList } from './result-helper';
 import { LanguageContext } from './LanguageContext';
 import { FaApple, FaSpotify } from 'react-icons/fa';
 import { FaCaretRight } from 'react-icons/fa6';
+import { motion } from 'framer-motion';
 declare module 'swiper/css/navigation'
 declare module 'swiper/css/pagination'
 
@@ -53,8 +54,6 @@ const getDateInfo = (month: number, day: number, date: number, prefLang: string)
 
 	const renderedDay = day + 1;
 
-	console.log(day)
-
 	const renderedDate = (() => {
 		if(prefLang === "jp") {
 			switch(date) {
@@ -94,13 +93,13 @@ const positionStyle = (currentIndex: number) => {
 	if(currentIndex === 0) {
 		return { left: "48px"};
 	} else if(currentIndex >= 1 && 8 >= currentIndex || currentIndex === 10) {
-		return { left: "24px"};
+		return { left: "8px"};
 	} else if (currentIndex === 10) {
-		return { left: "-6px", RxLetterSpacing: "-8px" };
+		return { left: "-16px", letterSpacing: "-8px" };
 	} else if((currentIndex >= 10 && 18 >= currentIndex) || currentIndex === 20) {
-		return { left: "-6px"};
+		return { left: "-6px", letterSpacing: "-8px" };
 	} else {
-		return { left: "-56px", letterSpacing: "-8px"};
+		return { left: "-64px", letterSpacing: "-8px" };
 	}
 };
 
@@ -116,7 +115,7 @@ const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
 			effect="coverflow"
 			modules={[EffectCoverflow]}
 			spaceBetween={35}
-			slidesPerView={1.3}
+			slidesPerView={1.25}
 			centeredSlides={true}
 			coverflowEffect={{
 				rotate: 15,
@@ -140,84 +139,142 @@ const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
 					<SwiperSlide
 						key={list._id}
 					>
-						<div className="swiper-slide-bg" style={{ background: `linear-gradient(135deg, #${data.color[0]}, #${data.color[1]}, #${data.color[2]})` }}>
-
-							{/* setting a background emoji pattern for the swiper */}
-							{index === activeIndex && (
-								<div className="emoji-bg">
-									{ Array.from({ length: 5 }).map((_, rowI) => (
-										<div className="emoji-bg-row" key={rowI}>
-											{ Array.from({ length: 5 }).map((_, colI) => (
-												<span key={colI}>{data.emoji}</span>
-											))}
-										</div>
-									))}
-								</div>
-							)}
-
-							<div
-								className="swiper-content"
-								style={{ color: data.fontColor ? `var(--${data.fontColor})` : "var(--white)" }}
-							>
+						<div 
+							className="framed"
+							style={{ padding: index !== activeIndex ? "unset" : "16px" }}
+						>
+							{/* inactive slides design */}
 								{index !== activeIndex && (
 									<>
 									<span className='prev-number'>{index + 1}</span>
 									<span className='next-number'>{index + 1}</span>
 									</>
 								)}
-								
-								{index === activeIndex && (
-									<>
-									<h2>{data.title}</h2>
+							<div 
+								className="swiper-slide-bg" 
+								style={{ 
+									background: `linear-gradient(135deg, #${data.color[0]}, #${data.color[1]}, #${data.color[2]})`,
+									height: index !== activeIndex ? "432px" : "232px" 
+								}}
+							>
 
-									<h3
-										className='current-index'
-										style={ positionStyle(activeIndex)}
-									>
-										{index + 1}
-									</h3>
-									<ul className="playlist-status">
-										<li>{prefLang === "en" ? "Times you found" : "見つけた回数"}<span className="bold status-desc">{list.timesFound}{prefLang === "en" ? "" : " 回"}</span></li>
-										<li>{prefLang === "en" ? "Date you first found" : "初めて見つけた日"}<span className="bold status-desc">{getDateInfo(
-											list.dateInfo.month,
-											list.dateInfo.day,
-											list.dateInfo.date,
-											prefLang)}</span></li>
-									</ul>
-									</>
+								{/* setting a background emoji pattern for the swiper */}
+								{index === activeIndex && (
+									<div className="emoji-bg">
+										{ Array.from({ length: 5 }).map((_, rowI) => (
+											<div className="emoji-bg-row" key={rowI}>
+												{ Array.from({ length: 5 }).map((_, colI) => (
+													<span key={colI}>{data.emoji}</span>
+												))}
+											</div>
+										))}
+									</div>
 								)}
-							</div>	
-						</div>
-						{ index === activeIndex && 
-							<div className="links">
-								<a
-								href={`https://open.spotify.com/playlist/${data.link}`}
-								target="_blank"
-								rel='noopener noreferrer'
+
+								<div
+									className="swiper-content"
+									style={{ color: data.fontColor ? `var(--${data.fontColor})` : "var(--lt-white)" }}
 								>
-									<button className="spotify-link link-btns button">
-										<span className='btn-content' >
-											<FaCaretRight className='right-arrow' />
-											{prefLang === "en" ? <>Open in <span className="app-names spotify-color bold">Spotify</span></> : <><span className="spotify-color app-names bold">Spotify</span>で開く</>}
-										</span>
-										<FaSpotify className='app-logos spotify-logo spotify-color' />
-									</button>
-								</a>
-									<a 
-									href={`https://music.apple.com/us/playlist/${data.title}/pl.u-${data.apple}`}
-									target="_blank"
-									rel='noopener noreferrer'
-								>
-									<button className="apple-link link-btns button">
-										<span className='btn-content' >
-											<FaCaretRight className='right-arrow' />
-											{prefLang === "en" ? <>Open in <span className="app-names apple-color bold">Apple Music</span></> : <><span className="apple-color app-names bold">Apple Music</span>で開く</>}
-										</span>
-										<FaApple className='app-logos apple-logo apple-color' />
-									</button>
-								</a>
+									{index === activeIndex && (
+										<>
+										<h2>{data.title}</h2>
+
+										<h3
+											className='current-index'
+											style={ positionStyle(activeIndex) }
+										>
+											{index + 1}
+										</h3>
+										<ul className="playlist-status">
+											<li>{prefLang === "en" ? "Times you captured" : "見つけた回数"}<span className="bold status-desc">{list.timesFound}{prefLang === "en" ? "" : " 回"}</span></li>
+											<li>{prefLang === "en" ? "First found" : "初めて見つけた日"}<span className="bold status-desc">{getDateInfo(
+												list.dateInfo.month,
+												list.dateInfo.day,
+												list.dateInfo.date,
+												prefLang)}</span></li>
+										</ul>
+										</>
+									)}
+								</div>
 							</div>
-						}
+							{index === activeIndex && (
+								<motion.div 
+									className="links"
+									initial={{ opacity: 0, y: -10 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: .5, delay: .3, ease: "easeOut" }}
+								>
+									<p className="links-cta">
+										{prefLang !== "jp" && "Listen to "}
+										<span
+											className="bold"
+											style={{ 
+												background: `linear-gradient(135deg, #${data.color[0]}, #${data.color[1]}, #${data.color[2]}`,
+												color: "transparent",
+												backgroundClip: "text"
+											}}
+										>
+											{data.title}
+										</span>
+										{prefLang === "jp" && "を聴いてみる"}
+									</p>
+
+									<div className="apple app-link">
+										<div className="app-type">
+											<FaCaretRight className='right-arrow' />
+											<FaSpotify className='app-logos spotify-logo spotify-color' />
+											<p className="app-names">Spotify</p>
+										</div>
+										<a
+											href={`https://open.spotify.com/playlist/${data.link}`}
+											target="_blank"
+											rel='noopener noreferrer'
+										>
+											<button 
+												className="spotify-link link-btns button"
+												style={{ 
+													background: `linear-gradient(white, var(--white)) padding-box, linear-gradient(135deg, #${data.color[0]}, #${data.color[1]}, #${data.color[2]}) border-box`,
+													border: "transparent solid 2px"
+												}}
+											>{prefLang === "en" ? "Play" : "再生する"}</button>
+										</a>
+									</div>
+
+									<div 
+										className="divider"
+										style={{ background: `linear-gradient(135deg, #${data.color[0]}, #${data.color[1]}, #${data.color[2]}`}}
+									/>
+
+									<div className="spotify app-link">
+										<div className="app-type">
+											<FaCaretRight className='right-arrow' />
+											<FaApple className='app-logos apple-logo apple-color' />
+											<p className="app-names">Apple Music</p>
+										</div>
+										<a 
+											href={`https://music.apple.com/us/playlist/${data.title}/pl.u-${data.apple}`}
+											target="_blank"
+											rel='noopener noreferrer'
+										>
+											<button
+												className="apple-link link-btns button"
+												style={{
+													background: `linear-gradient(white, var(--white)) padding-box, linear-gradient(-45deg, #${data.color[0]}, #${data.color[1]}, #${data.color[2]}) border-box`,
+													border: "transparent solid 2px"
+												}}
+											>{prefLang === "en" ? "Play" : "再生する"}</button>
+										</a>
+									</div>
+								</motion.div>
+							)}
+							<div 
+								className="framed-bg"
+								style={{
+									border: "solid 6px transparent",
+									background: `linear-gradient(white, var(--white)) padding-box, linear-gradient(135deg, #${data.color[0]}, #${data.color[1]}, #${data.color[2]}) border-box`
+								}}
+							/>
+						</div>
 					</SwiperSlide>
 				);
 			})}

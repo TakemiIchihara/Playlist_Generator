@@ -2,6 +2,7 @@
 :root {
 	--black: #2D3047;
 	--white: #E6EFEF;
+	--lt-white: #F2F4F3;
 	--indigo: #00477A;
 	--vivid-blue: #0071ff;
 	--blue: #77A6B6;
@@ -37,7 +38,6 @@ header, main, footer, #content {
 .bold {
 	font-weight: 700;
 }
-
 /*----- Contents -----*/
 /*--- Header ---*/
 header {
@@ -196,7 +196,7 @@ main, .loading-holder  {
 
 /* swiper */
 #saved-playlists {
-	margin-top: 96px;
+	margin-top: 88px;
 	width: 100vw;
 }
 #saved-playlists-title {
@@ -204,7 +204,7 @@ main, .loading-holder  {
 	justify-content: space-between;
 	gap: 16px;
 	align-items: center;
-	margin-bottom: 8px;
+	margin-bottom: 16px;
 	padding: 0 32px;
 }
 #delete-btn {
@@ -217,6 +217,8 @@ main, .loading-holder  {
 	padding-left: 24px;
 	height: 20px;
 }
+
+/* Swiper */
 #swiper-holder {
 	padding: 8px 0 24px 0;
 	/* background-color: #6969697f; */
@@ -225,23 +227,39 @@ main, .loading-holder  {
 }
 .swiper {
 	width: 100vw;
-	height: 368PX;
+	height: 432PX;
 }
 .swiper-slide {
 	border: unset;
-	color: var(--white)
 }
 .swiper-slide-shadow-coverflow {
 	border-radius: 8px 8px;
-	height: 232PX !important;
+	height: 432PX !important;
 	background-image: unset;
+}
+
+/* content inside the swiper */
+.framed {
+	color: var(--black);
+}
+.swiper-content {
+	position: relative;
+	z-index: 11;
+	height: calc(100% - 32px);
+	display: grid;
+	grid-template-rows: .2fr 1fr;
+	align-items: end;
+	gap: 16px;
+	padding: 16px 8px;
 }
 .swiper-slide-bg {
 	position: relative;
+	z-index: 1;
+	margin: 0 auto;
 	overflow: hidden;
 	height: 232px;
-	width: 100%;
 	border-radius: 8px 8px;
+	border: unset;
 }
 .emoji-bg {
 	transform: rotate(-20deg);
@@ -249,6 +267,7 @@ main, .loading-holder  {
 	width: 150%;
 	height: 35vh;
 	position: absolute;
+	z-index: 1;
 	top: -32px;
 	left: -104px;
 	display: flex;
@@ -266,18 +285,6 @@ main, .loading-holder  {
 .emoji-bg-row:nth-child(even) {
 	margin-left: 40px;
 }
-
-/* content inside the swiper */
-.swiper-content {
-	position: relative;
-	z-index: 11;
-	height: calc(100% - 48px);
-	display: grid;
-	grid-template-rows: .2fr 1fr;
-	align-items: end;
-	gap: 16px;
-	padding: 24px;
-}
 .swiper-slide h2 {
 	font-size: 48px;
 	font-weight: 700;
@@ -285,6 +292,7 @@ main, .loading-holder  {
 }
 .prev-number, .next-number {
 	position: absolute;
+	z-index: 11;
 	top: 50%;
 	transform: translateY(-50%);
 	font-size: 128px;
@@ -319,7 +327,7 @@ main, .loading-holder  {
 	flex-direction: column;
 	gap: 6px;
 }
-.status-desc {
+.status-desc, .links-cta {
 	font-size: 20px;
 }
 .links {
@@ -328,53 +336,41 @@ main, .loading-holder  {
 	justify-content: center;
 	align-items: center;
 	gap: 8px;
+	width: calc(100% - 16px);
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
 	margin-top: 16px;
+	letter-spacing: 1px;
+}
+.app-link {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.app-type {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.apple {
+	margin-top: 8px;
 }
 .links a {
-	width: 100%;
+	text-decoration: unset;
+	color: var(--black);
 }
 .link-btns {
-	height: 56px;
-	width: 100%;
-	border-radius: 50px 50px;
-	font-size: 18px;
-	font-weight: 400;
-	position: relative;
-	z-index: 1;
-	overflow: hidden;
-	text-align: center;
-	padding-right: 40px;
-	background: transparent;
-}
-.link-btns::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 0;
-	background-color: #D7E5EA;
-	border-radius: 50px 50px;
-	box-shadow: inset 6px 6px 8px 2px rgba(0, 0, 0, 0.1), inset 4px 6px 4px rgba(0, 0, 0, 0.06);
-	opacity: .9;
-}
-.btn-content {
-	position: relative;
-	z-index: 1;
+	height: 48px;
+	width: 96px;
+	border-radius: 10px 10px;
+	font-size: 16px;
+	font-weight: 300;
+	box-shadow: inset 2px 2px 5px 4px rgba(0, 0, 0, 0.1), inset 2px 4px 2px rgba(0, 0, 0, 0.06);
 }
 .right-arrow {
-	visibility: hidden;
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	right: -22px;
-	top: 50%;
-  transform: translateY(-50%);
-}
-.app-names { 
-	z-index: 1;
-	letter-spacing: .5px;
+	font-size: 22px;
 }
 .spotify-color {
 	color: var(--spotify-green);
@@ -383,16 +379,22 @@ main, .loading-holder  {
 	color: var(--apple-red);
 }
 .app-logos {
+	/* transform: rotate(-5deg); */
+	font-size: 36px;
+}
+.divider {
+	height: 2px;
+	width: calc(100% - 16px);
+	margin: 0px 4px;
+}
+.framed-bg {
 	position: absolute;
-	right: 8px;
-	transform: rotate(15deg);
-	font-size: 88px;
-}
-.spotify-logo {
-	top: 0px;
-}
-.apple-logo {
-	top: -8px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	border-radius: 10px 10px;
 }
 
 
@@ -412,10 +414,10 @@ footer {
 	gap: 8px;
 }
 footer button {
-	height: 24px;
-	width: 3rem;
+	height: 1.4rem;
+	width: 4rem;
+	font-size: .8rem;
 	border: unset;
 	border: solid .5px var(--black);
 	border-radius: 12px 12px;
-	font-size: 1rem;
 }
