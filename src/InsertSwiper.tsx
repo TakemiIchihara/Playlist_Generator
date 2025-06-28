@@ -6,7 +6,6 @@ import type { Playlist, PlaylistsData, SavedList } from './result-helper';
 import { LanguageContext } from './LanguageContext';
 import { FaApple, FaSpotify } from 'react-icons/fa';
 import { FaCaretRight } from 'react-icons/fa6';
-import { RxLetterSpacing } from 'react-icons/rx';
 declare module 'swiper/css/navigation'
 declare module 'swiper/css/pagination'
 
