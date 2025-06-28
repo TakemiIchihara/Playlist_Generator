@@ -227,14 +227,14 @@ main, .loading-holder  {
 }
 .swiper {
 	width: 100vw;
-	height: 432PX;
+	height: 440PX;
 }
 .swiper-slide {
 	border: unset;
 }
 .swiper-slide-shadow-coverflow {
 	border-radius: 8px 8px;
-	height: 432PX !important;
+	height: 440PX !important;
 	background-image: unset;
 }
 
@@ -357,7 +357,7 @@ main, .loading-holder  {
 .apple {
 	margin-top: 8px;
 }
-.links a {
+.links a, .link-btns, footer button {
 	text-decoration: unset;
 	color: var(--black);
 }
@@ -381,6 +381,9 @@ main, .loading-holder  {
 .app-logos {
 	/* transform: rotate(-5deg); */
 	font-size: 36px;
+}
+.app-names {
+	font-weight: 600;
 }
 .divider {
 	height: 2px;

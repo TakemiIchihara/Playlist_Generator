@@ -93,13 +93,13 @@ const positionStyle = (currentIndex: number) => {
 	if(currentIndex === 0) {
 		return { left: "48px"};
 	} else if(currentIndex >= 1 && 8 >= currentIndex || currentIndex === 10) {
-		return { left: "8px"};
-	} else if (currentIndex === 10) {
-		return { left: "-16px", letterSpacing: "-8px" };
+		return { left: "24px"};
+	} else if (currentIndex === 9) {
+		return { left: 0};
 	} else if((currentIndex >= 10 && 18 >= currentIndex) || currentIndex === 20) {
-		return { left: "-6px", letterSpacing: "-8px" };
+		return { left: "8px" };
 	} else {
-		return { left: "-64px", letterSpacing: "-8px" };
+		return { left: "-32px", letterSpacing: "-8px" };
 	}
 };
 
@@ -115,7 +115,7 @@ const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
 			effect="coverflow"
 			modules={[EffectCoverflow]}
 			spaceBetween={35}
-			slidesPerView={1.25}
+			slidesPerView={1.15}
 			centeredSlides={true}
 			coverflowEffect={{
 				rotate: 15,
@@ -154,7 +154,7 @@ const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
 								className="swiper-slide-bg" 
 								style={{ 
 									background: `linear-gradient(135deg, #${data.color[0]}, #${data.color[1]}, #${data.color[2]})`,
-									height: index !== activeIndex ? "432px" : "232px" 
+									height: index !== activeIndex ? "440px" : "232px" 
 								}}
 							>
 
@@ -171,8 +171,12 @@ const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
 									</div>
 								)}
 
-								<div
+								<motion.div 
 									className="swiper-content"
+									key={index}
+									initial={{ opacity: 0, y: -10 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: .5, delay: .3, ease: "easeOut" }}
 									style={{ color: data.fontColor ? `var(--${data.fontColor})` : "var(--lt-white)" }}
 								>
 									{index === activeIndex && (
@@ -195,11 +199,12 @@ const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
 										</ul>
 										</>
 									)}
-								</div>
+								</motion.div>
 							</div>
 							{index === activeIndex && (
 								<motion.div 
 									className="links"
+									key={index}
 									initial={{ opacity: 0, y: -10 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ duration: .5, delay: .3, ease: "easeOut" }}
@@ -207,8 +212,8 @@ const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
 									<p className="links-cta">
 										{prefLang !== "jp" && "Listen to "}
 										<span
-											className="bold"
-											style={{ 
+											style={{
+												fontWeight: 900,
 												background: `linear-gradient(135deg, #${data.color[0]}, #${data.color[1]}, #${data.color[2]}`,
 												color: "transparent",
 												backgroundClip: "text"
