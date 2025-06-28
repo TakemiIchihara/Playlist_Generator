@@ -16,8 +16,7 @@
                 "nextKey": "Q2-2",
                 "white": true
             }
-        ],
-        "colorTheme": "firstPalette"
+        ]
     },
     "Q2-1": {
         "_id": 21,
@@ -42,8 +41,7 @@
                 "nextKey": "Q3-3",
                 "white": true
             }
-        ],
-        "colorTheme": "kiPalette"
+        ]
     },
     "Q2-2": {
         "_id": 22,
@@ -62,8 +60,7 @@
                 "nextKey": "Q3-5",
                 "white": true
             }
-        ],
-        "colorTheme": "aiPalette"
+        ]
     },
     "Q3-1": {
         "_id": 31,
@@ -98,8 +95,7 @@
                 "_id": "32b",
                 "answer": "Thank as many you love as possible",
                 "color": ["D63230", "FFA62B", "FF5A5F"],
-                "nextKey": "Q4-4",
-                "white": true
+                "nextKey": "Q4-4"
             }
         ]
     },
@@ -111,15 +107,13 @@
                 "_id": "33a",
                 "answer": "Like an apple tree, bearing lots of fruits",
                 "color": ["F45D52", "F47066", "FF709B"],
-                "nextKey": "Q4-5",
-                "white": true
+                "nextKey": "Q4-5"
             },
             {
                 "_id": "33b",
                 "answer": "Like a pine, pointed tip reaching the sky",
                 "color": ["779834", "99C149", "A07240"],
-                "nextKey": "Q4-6",
-                "white": true
+                "nextKey": "Q4-6"
             }
         ]
     },
@@ -137,8 +131,7 @@
                 "_id": "34b",
                 "answer": "Vigorous, yet her smile is faint",
                 "color": ["908483", "CBADA4", "A95C68"],
-                "nextKey": "Q4-8",
-                "white": true
+                "nextKey": "Q4-8"
             }
         ]
     },
@@ -167,8 +160,7 @@
                 "nextKey": "Q4-11",
                 "white": true
             }
-        ],
-        "colorTheme": "aiPalette"
+        ]
     },
     "Q4-1": {
         "_id": 41,
@@ -205,8 +197,7 @@
                 "answer": "Blue",
                 "color": ["2541B2", "89CFF0", "1768AC"]
             }
-        ],
-        "colorTheme": "rakuPalette"
+        ]
     },
     "Q4-3": {
         "_id": 43,
@@ -248,14 +239,14 @@
         "answers": [
             {
                 "_id": "45a",
-                "answer": "Pink",
-                "color": ["F2D9D6", "D7435D", "902742"],
+                "answer": "Yellow",
+                "color": ["BD89D2", "F4BB01", "E8D873"],
                 "white": true
             },
             {
                 "_id": "45b",
-                "answer": "Yellow",
-                "color": ["BD89D2", "F4BB01", "E8D873"],
+                "answer": "Pink",
+                "color": ["F2D9D6", "D7435D", "902742"],
                 "white": true
             }
         ]

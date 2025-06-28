@@ -16,8 +16,7 @@
                 "nextKey": "Q2-2",
                 "white": true
             }
-        ],
-        "colorTheme": "firstPalette"
+        ]
     },
     "Q2-1": {
         "_id": 21,
@@ -42,8 +41,7 @@
                 "nextKey": "Q3-3",
                 "white": true
             }
-        ],
-        "colorTheme": "kiPalette"
+        ]
     },
     "Q2-2": {
         "_id": 22,
@@ -63,8 +61,7 @@
                 "nextKey": "Q3-5",
                 "white": true
             }
-        ],
-        "colorTheme": "aiPalette"
+        ]
     },
     "Q3-1": {
         "_id": 31,
@@ -99,8 +96,7 @@
                 "_id": "32b",
                 "answer": "大切な人たちにできる限り感謝する",
                 "color": ["D63230", "FFA62B", "FF5A5F"],
-                "nextKey": "Q4-4",
-                "white": true
+                "nextKey": "Q4-4"
             }
         ]
     },
@@ -112,15 +108,13 @@
                 "_id": "33a",
                 "answer": "あちこちに実がなるリンゴの木",
                 "color": ["F45D52", "F47066", "FF709B"],
-                "nextKey": "Q4-5",
-                "white": true
+                "nextKey": "Q4-5"
             },
             {
                 "_id": "33b",
                 "answer": "とがった先が天高く伸びるマツの木",
                 "color": ["779834", "99C149", "A07240"],
-                "nextKey": "Q4-6",
-                "white": true
+                "nextKey": "Q4-6"
             }
         ]
     },
@@ -138,8 +132,7 @@
                 "_id": "34b",
                 "answer": "健康的だがよわよわしく笑う人",
                 "color": ["908483", "CBADA4", "A95C68"],
-                "nextKey": "Q4-8",
-                "white": true
+                "nextKey": "Q4-8"
             }
         ]
     },
@@ -168,12 +161,11 @@
                 "nextKey": "Q4-11",
                 "white": true
             }
-        ],
-        "colorTheme": "aiPalette"
+        ]
     },
     "Q4-1": {
         "_id": 41,
-        "question": "私はフェアリーゴッドマザー\nあなたの好きな人に近づきたいなら、\n動物に変身させてあげましょう!\nさあ、どちらがよろしい?",
+        "question": "私はフェアリーゴッドマザー\nあなたの好きな人に近づけるよう、\n動物に変身させてあげましょう !\nさあ、どちらがよろしい?",
         "answers": [
             {
                 "_id": "41a",
@@ -206,8 +198,7 @@
                 "answer": "あお",
                 "color": ["2541B2", "89CFF0", "1768AC"]
             }
-        ],
-        "colorTheme": "rakuPalette"
+        ]
     },
     "Q4-3": {
         "_id": 43,
@@ -249,14 +240,14 @@
         "answers": [
             {
                 "_id": "45a",
-                "answer": "ピンク",
-                "color": ["F2D9D6", "D7435D", "902742"],
+                "answer": "黄色",
+                "color": ["BD89D2", "F4BB01", "E8D873"],
                 "white": true
             },
             {
                 "_id": "45b",
-                "answer": "きいろ",
-                "color": ["BD89D2", "F4BB01", "E8D873"],
+                "answer": "ピンク",
+                "color": ["F2D9D6", "D7435D", "902742"],
                 "white": true
             }
         ]
@@ -267,13 +258,13 @@
         "answers": [
             {
                 "_id": "46a",
-                "answer": "くりいろ",
+                "answer": "あかいろ",
                 "color": ["980B1C", "C53049", "550000"],
                 "white": true
             },
             {
                 "_id": "46b",
-                "answer": "濃いピンク",
+                "answer": "ピンク",
                 "color": ["FF446A", "FF6EC7", "B8657D"],
                 "white": true
             },
@@ -296,7 +287,7 @@
             },
             {
                 "_id": "47b",
-                "answer": "サンゴいろ",
+                "answer": "オレンジ",
                 "color": ["F7C8A0", "F2B88B", "F3A66E"]
             }
         ]
@@ -343,13 +334,13 @@
         "answers": [
             {
                 "_id": "410a",
-                "answer": "濃いあか",
+                "answer": "あか",
                 "color": ["371722", "682E3C", "8A3C36"],
                 "white": true
             },
             {
                 "_id": "410b",
-                "answer": "濃いあおみどり",
+                "answer": "あおみどり",
                 "color": ["323549", "306D88", "5F8181"],
                 "white": true
             }

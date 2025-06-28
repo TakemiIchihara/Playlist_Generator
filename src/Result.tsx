@@ -94,7 +94,7 @@ const Result = ({ playlistId, onRetake}: ResultProps) => {
 				onClick={onRetake}
 				style={{
 					backgroundImage: `linear-gradient(90deg, #${playlistsData[playlistId].color[0]}, #${playlistsData[playlistId].color[1]}, #${playlistsData[playlistId].color[2]})`,
-					color: playlistsData[playlistId].btnWhite ? "#E6EFEF" : "#2D3047"
+					color: playlistsData[playlistId].btnWhite ? "var(--white)" : "var(--black)"
 				}}
 			>
 				{prefLang === "en" ? "Take the Quiz Again" : "もう一度クイズをする" }

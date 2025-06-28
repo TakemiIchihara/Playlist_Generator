@@ -15,9 +15,17 @@ const DisplaySavedPlaylists = ( { playlistsData }: DisplaySavedPlaylistsProps) =
             <div id="saved-playlists-title">
                 <h2 className="title">{prefLang === "en" ? "Your Saved Playlists" : "見つけたプレイリスト"}</h2>
                 <button
-                    id="delete-btn"
-                    onClick={() => {localStorage.clear(); window.alert("Your captured playlists are successfully deleted")}}>
-                        {prefLang === "en" ? "Delete" : "削除" }
+									id="delete-btn"
+									onClick={() => {
+										if(localStorage.getItem("prefLang")) {
+											localStorage.clear();
+											window.alert("Your captured playlists are successfully deleted")
+										} else {
+											window.alert("You don't currently have any saved playlists")
+										};
+									}}
+									>
+											{prefLang === "en" ? "Delete" : "削除" }
                 </button>
             </div>
             <div id="swiper-holder">

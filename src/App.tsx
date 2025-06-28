@@ -112,7 +112,7 @@ function App() {
         <footer>
           <small>© 2025 TkmIchihara</small>
           <div id="lang-setting">
-            <small>{prefLang === "en" ? "Language" : "言語設定"}</small>
+            <small>{prefLang === "en" ? "Language" : "言語設定"} <span className='bold'>:</span></small>
             <button onClick={() => setPrefLang( prefLang === "en" ? "jp" : "en")}>{prefLang}</button>
           </div>
         </footer>

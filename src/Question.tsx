@@ -82,7 +82,7 @@ const Question = ({ onFinish, onAnswer, exportProps }: QuestionProps) => {
 								}}
 								style={{
 									background: `linear-gradient(90deg, #${answer.color[0]}, #${answer.color[1]}, #${answer.color[2]})`,
-									color: answer.white ? "var(--white)" : "var(--black)",
+									color: answer.white ? "var(--white)" : "var(--black)"
 								}}
 							>
 								{answer.answer}

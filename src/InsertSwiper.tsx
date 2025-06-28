@@ -6,6 +6,7 @@ import type { Playlist, PlaylistsData, SavedList } from './result-helper';
 import { LanguageContext } from './LanguageContext';
 import { FaApple, FaSpotify } from 'react-icons/fa';
 import { FaCaretRight } from 'react-icons/fa6';
+import { RxLetterSpacing } from 'react-icons/rx';
 declare module 'swiper/css/navigation'
 declare module 'swiper/css/pagination'
 
@@ -83,12 +84,26 @@ const getDateInfo = (month: number, day: number, date: number, prefLang: string)
 	
 	return (
 		<>
-			<span className='month'>{renderedMonth}</span>
-			<span className='day'>{renderedDay}{prefLang === "jp" && "日"}</span>
+			<span className='month'>{renderedMonth} </span>
+			<span className='day'>{renderedDay}{prefLang === "jp" && "日"} </span>
 			<span className='date'>({renderedDate})</span>
 		</>
 	);
 }
+
+const positionStyle = (currentIndex: number) => {
+	if(currentIndex === 0) {
+		return { left: "48px"};
+	} else if(currentIndex >= 1 && 8 >= currentIndex || currentIndex === 10) {
+		return { left: "24px"};
+	} else if (currentIndex === 10) {
+		return { left: "-6px", RxLetterSpacing: "-8px" };
+	} else if((currentIndex >= 10 && 18 >= currentIndex) || currentIndex === 20) {
+		return { left: "-6px"};
+	} else {
+		return { left: "-56px", letterSpacing: "-8px"};
+	}
+};
 
 const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
 	const { prefLang } = useContext(LanguageContext)
@@ -142,12 +157,8 @@ const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
 							)}
 
 							<div
-							className="swiper-content"
-							style={{
-								position: "relative",
-								zIndex: 11,
-								height: "inherit" 
-							}}
+								className="swiper-content"
+								style={{ color: data.fontColor ? `var(--${data.fontColor})` : "var(--white)" }}
 							>
 								{index !== activeIndex && (
 									<>
@@ -158,50 +169,56 @@ const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
 								
 								{index === activeIndex && (
 									<>
-										<h2>{data.title}</h2>
+									<h2>{data.title}</h2>
 
-										<ul className="playlist-status">
-											<li>{prefLang === "en" ? "Times you found" : "見つけた回数"}: <span className="bold">{list.timesFound}</span></li>
-											<li>{prefLang === "en" ? "Date you first found" : "初めて見つけた日"}: <span className="bold">{getDateInfo(
-												list.dateInfo.month,
-												list.dateInfo.day,
-												list.dateInfo.date,
-												prefLang)}</span></li>
-										</ul>
-										
-
-										<div className="links">
-											<a
-											href={`https://open.spotify.com/playlist/${data.link}`}
-											target="_blank"
-											rel='noopener noreferrer'
-											>
-												<button className="spotify-link link-btns button">
-													<span className='btn-content' >
-														<FaCaretRight className='right-arrow' />
-														{prefLang === "en" ? <>Open in <span className="app-names spotify-color bold">Spotify</span></> : <><span className="spotify-color app-names bold">Spotify</span> で開く</>}
-													</span>
-													<FaSpotify className='app-logos spotify-logo spotify-color' />
-												</button>
-											</a>
-												<a 
-												href={`https://music.apple.com/us/playlist/${data.title}/pl.u-${data.apple}`}
-												target="_blank"
-												rel='noopener noreferrer'
-											>
-												<button className="apple-link link-btns button">
-													<span className='btn-content' >
-														<FaCaretRight className='right-arrow' />
-														{prefLang === "en" ? <>Open in <span className="app-names apple-color bold">Apple Music</span></> : <><span className="apple-color app-names bold">Apple Music</span> で開く</>}
-													</span>
-													<FaApple className='app-logos apple-logo apple-color' />
-												</button>
-											</a>
-										</div>
+									<h3
+										className='current-index'
+										style={ positionStyle(activeIndex)}
+									>
+										{index + 1}
+									</h3>
+									<ul className="playlist-status">
+										<li>{prefLang === "en" ? "Times you found" : "見つけた回数"}<span className="bold status-desc">{list.timesFound}{prefLang === "en" ? "" : " 回"}</span></li>
+										<li>{prefLang === "en" ? "Date you first found" : "初めて見つけた日"}<span className="bold status-desc">{getDateInfo(
+											list.dateInfo.month,
+											list.dateInfo.day,
+											list.dateInfo.date,
+											prefLang)}</span></li>
+									</ul>
 									</>
 								)}
-							</div>
+							</div>	
 						</div>
+						{ index === activeIndex && 
+							<div className="links">
+								<a
+								href={`https://open.spotify.com/playlist/${data.link}`}
+								target="_blank"
+								rel='noopener noreferrer'
+								>
+									<button className="spotify-link link-btns button">
+										<span className='btn-content' >
+											<FaCaretRight className='right-arrow' />
+											{prefLang === "en" ? <>Open in <span className="app-names spotify-color bold">Spotify</span></> : <><span className="spotify-color app-names bold">Spotify</span>で開く</>}
+										</span>
+										<FaSpotify className='app-logos spotify-logo spotify-color' />
+									</button>
+								</a>
+									<a 
+									href={`https://music.apple.com/us/playlist/${data.title}/pl.u-${data.apple}`}
+									target="_blank"
+									rel='noopener noreferrer'
+								>
+									<button className="apple-link link-btns button">
+										<span className='btn-content' >
+											<FaCaretRight className='right-arrow' />
+											{prefLang === "en" ? <>Open in <span className="app-names apple-color bold">Apple Music</span></> : <><span className="apple-color app-names bold">Apple Music</span>で開く</>}
+										</span>
+										<FaApple className='app-logos apple-logo apple-color' />
+									</button>
+								</a>
+							</div>
+						}
 					</SwiperSlide>
 				);
 			})}

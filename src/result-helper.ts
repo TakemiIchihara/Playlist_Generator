@@ -9,7 +9,7 @@ export interface Playlist {
 	color: string[];
 	songs: string[];
 	emoji: string;
-	"font-color": string;
+	fontColor: string;
 	btnWhite: boolean;
 }
 
