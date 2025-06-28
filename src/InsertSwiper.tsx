@@ -12,6 +12,7 @@ declare module 'swiper/css/pagination'
 
 interface InsertSwiperProps {
     playlistsData: PlaylistsData;
+		playlistId: string;
 }
 
 const getDateInfo = (month: number, day: number, date: number, prefLang: string) => {
@@ -91,19 +92,19 @@ const getDateInfo = (month: number, day: number, date: number, prefLang: string)
 
 const positionStyle = (currentIndex: number) => {
 	if(currentIndex === 0) {
-		return { left: "48px"};
+		return { left: "48px" };
 	} else if(currentIndex >= 1 && 8 >= currentIndex || currentIndex === 10) {
-		return { left: "24px"};
+		return { left: "24px" };
 	} else if (currentIndex === 9) {
-		return { left: 0};
+		return { left: "-8px" };
 	} else if((currentIndex >= 10 && 18 >= currentIndex) || currentIndex === 20) {
-		return { left: "8px" };
+		return { left: "8px", letterSpacing: "-8px" };
 	} else {
-		return { left: "-32px", letterSpacing: "-8px" };
+		return { left: "-40px", letterSpacing: "-8px" };
 	}
 };
 
-const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
+const InsertSwiper = ({ playlistsData, playlistId}: InsertSwiperProps) => {
 	const { prefLang } = useContext(LanguageContext)
 	const [activeIndex, setActiveIndex] = useState(0);
 
@@ -117,6 +118,8 @@ const InsertSwiper = ({ playlistsData }: InsertSwiperProps) => {
 			spaceBetween={35}
 			slidesPerView={1.15}
 			centeredSlides={true}
+			initialSlide={Math.max(0, savedPlaylists.findIndex((list) => list._id === playlistId))}
+			// loop={savedPlaylists.length >= 4}
 			coverflowEffect={{
 				rotate: 15,
 				stretch: 25,

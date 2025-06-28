@@ -86,7 +86,7 @@ const Result = ({ playlistId, onRetake}: ResultProps) => {
 				transition={{ duration: 1.5, delay: 1}}
 			/>
 			
-			<DisplaySavedPlaylists playlistsData={playlistsData} />
+			<DisplaySavedPlaylists playlistsData={playlistsData} playlistId={playlistId} />
 
 			<button
 				id="retake-btn"

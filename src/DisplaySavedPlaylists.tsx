@@ -5,9 +5,10 @@ import { LanguageContext } from "./LanguageContext";
 
 interface DisplaySavedPlaylistsProps {
     playlistsData: PlaylistsData;
+    playlistId: string;
 }
 
-const DisplaySavedPlaylists = ( { playlistsData }: DisplaySavedPlaylistsProps) => {
+const DisplaySavedPlaylists = ( { playlistsData, playlistId }: DisplaySavedPlaylistsProps) => {
     const { prefLang } = useContext(LanguageContext);
 
     return (
@@ -29,7 +30,7 @@ const DisplaySavedPlaylists = ( { playlistsData }: DisplaySavedPlaylistsProps) =
                 </button>
             </div>
             <div id="swiper-holder">
-                <InsertSwiper playlistsData={playlistsData} />
+                <InsertSwiper playlistsData={playlistsData} playlistId={playlistId} />
             </div>
         </section>
     );
