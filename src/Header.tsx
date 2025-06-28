@@ -8,10 +8,10 @@ const Header = ( { onRedo}: LandingProps ) => {
     return (
         <header>
             <div id="header-holder" onClick={onRedo}>
-                <h1>TKM</h1>
                 <FaRainbow
                     id="logo" 
                 />
+                <p>Playlist Generator</p>
             </div>
         </header>
     )

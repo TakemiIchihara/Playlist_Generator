@@ -46,7 +46,8 @@
         "title": "Serendipity",
         "color": ["874508", "C1630B", "D46D0C"],
         "songs": ["星影の小径", "Lovin' You", "All Is Found", "Ain't Got Nothing On You", "Kiss of Life", "Love Will Keep Us Alive", "You Make Me Feel Brand New"],
-        "emoji": "🧡"
+        "emoji": "🧡",
+        "btnWhite": true
     },
     "11a21b32a43b": {
         "link": "2W1chUD90s19ioaG0azLfY",
@@ -110,7 +111,8 @@
         "title": "Disco",
         "color": ["6D00AF", "FF3FB9", "0298CA"],
         "songs": ["Club Tropicana", "マスカレード", "On The Radio", "Let's Groove", "Spinning Around", "I'm Every Woman", "All For You", "Dancing Queen", "Stayin' Alive"],
-        "emoji": "🕺"
+        "emoji": "🕺",
+        "btnWhite": true
     },
     "11b22a34a47a": {
         "link": "3yLGQiDaPUqpxLNjbRXile",
@@ -135,7 +137,8 @@
         "title": "PrimaDonna",
         "color": ["E6B1D6", "BF8BB0", "916494"],
         "songs": ["役者", "Please Please Please", "Now You're Not Here", "Before You Walk Out of My Life", "ラチエン通りのシスター", "Out of My Head", "ラヴ・イズ・オーヴァー", "TAXI"],
-        "emoji": "💋"
+        "emoji": "💋",
+        "btnWhite": true
     },
     "11b22a34b48b": {
         "link": "5dHYFN4fzEwy80I819geph",
@@ -167,7 +170,8 @@
         "title": "Karma",
         "color": ["371722", "682E3C", "8A3C36"],
         "songs": ["Don't Speak", "死ぬのがいいわ", "Complicated", "Slow Dancing in a Burning Room", "Kill Bill", "二時間だけのバカンス", "Selfish", "CRY FOR ME"],
-        "emoji": "🪾"
+        "emoji": "🪾",
+        "btnWhite": true
     },
     "11b22b35b410b": {
         "link": "4B2kUF69D5cZdNzrsrqlh5",
@@ -175,7 +179,8 @@
         "title": "Antithesis",
         "color": ["323549", "306D88", "5F8181"],
         "songs": ["God is a woman", "トーキョーゲットー", "A Woman In a Man's World", "Man Eater", "Passionfruite", "MILLION DOLLAR BABY", "愛の言霊", "One of These Nights"],
-        "emoji": "🐏"
+        "emoji": "🐏",
+        "btnWhite": true
     },
     "11b22b35c411a": {
         "link": "61daCgbZDaWdDl0xiSjYuZ",
@@ -191,6 +196,7 @@
         "title": "Mortal",
         "color": ["BBA138", "6F00FF", "425ED2"],
         "songs": ["Celebrate", "Toi Et Moi", "I'm Free", "Damce Catharsis", "Lose Yourself to Dance", "月光潤色ガール", "Promises, Promises", "About Damn Time"],
-        "emoji": "🪐"
+        "emoji": "🪐",
+        "btnWhite": true
     }
 }

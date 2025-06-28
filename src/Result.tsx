@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
-import type { PlaylistsData } from './result-helper';
+import { useContext, useEffect, useRef, useState } from 'react';
+import type { DateInfo, PlaylistsData, SavedList } from './result-helper';
 import { motion } from 'framer-motion';
 import SongTitles from './SongTitles';
 // import Bubbles from './Bubbles';
@@ -12,9 +12,9 @@ interface  ResultProps {
 };
 
 const Result = ({ playlistId, onRetake}: ResultProps) => {
-	console.log(playlistId);
-	const [playlistsData, setPlaylistsData] = useState<PlaylistsData | null>(null);
 	const { prefLang } = useContext(LanguageContext);
+	const [playlistsData, setPlaylistsData] = useState<PlaylistsData | null>(null);
+	const savedPlaylistRef = useRef(false);
 
 	useEffect(() => {
 			fetch('/playlists.json')
@@ -29,16 +29,41 @@ const Result = ({ playlistId, onRetake}: ResultProps) => {
 	}, []);
 
 	useEffect(() => {
-			if (playlistId) {
-					const getUserPlaylists = localStorage.getItem("savedPlaylists")
-					let savedList: string[] = getUserPlaylists ? JSON.parse(getUserPlaylists) : [];
+		if (!playlistId || savedPlaylistRef.current) return;
 
-					if(!savedList.includes(playlistId)) {
-							savedList.push(playlistId);
-							localStorage.setItem("savedPlaylists", JSON.stringify(savedList));
-					};
+		savedPlaylistRef.current = true;
+
+		console.log("初回レンダリングのみ")
+		const getUserPlaylists = localStorage.getItem("savedPlaylists");
+		let savedList: SavedList[] = getUserPlaylists ? JSON.parse(getUserPlaylists) : [];
+
+		let existing = savedList.find(item => item._id === playlistId);
+		if(!existing) {
+			const dateFound = new Date();
+			const dateInfo: DateInfo = {
+				month: dateFound.getMonth(),
+				date: dateFound.getDay(),
+				day: dateFound.getDate() 
 			};
-	}, [playlistId])
+			const newPlaylist = {
+				_id: playlistId,
+				dateInfo,
+				timesFound: 1
+			};
+
+			savedList.push(newPlaylist);
+
+		} else {
+			savedList.forEach(list => {
+				if(list._id === playlistId) {
+					list.timesFound++;
+				}
+			});
+		};
+
+		localStorage.setItem("savedPlaylists", JSON.stringify(savedList));
+
+	}, []);
 
 	if (!playlistsData || !playlistsData[playlistId]) return <p>Loading...</p>;
 
@@ -48,7 +73,7 @@ const Result = ({ playlistId, onRetake}: ResultProps) => {
 		<div id="result-holder">
 		<div id="content">
 			<div id="title">
-				<p>{prefLang === "en" ? "The mood you captured is..." : "今の気分は..."}</p>
+				<p className='bold'>{prefLang === "en" ? "The mood you captured is..." : "今の気分は..."}</p>
 				<h1 id="playlist-title">{playlistsData[playlistId].title}</h1>
 			</div>
 	
@@ -60,18 +85,6 @@ const Result = ({ playlistId, onRetake}: ResultProps) => {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1.5, delay: 1}}
 			/>
-
-			{/* <div style={{ background: `linear-gradient(135deg, #${playlistsData[playlistId].color[0]}, #${playlistsData[playlistId].color[1]}, #${playlistsData[playlistId].color[2]})`, width: "200px", height: "200px", position: "absolute", left: 0, top: "48px", overflow: "hidden", borderRadius: "5px 5px", transform: "rotate(-15deg)"}}>
-				<div className="emoji-bg">
-					{ Array.from({ length: 4 }).map((_, rowI) => (
-							<div className="emoji-bg-row" key={rowI}>
-									{ Array.from({ length: 5 }).map((_, colI) => (
-											<span key={colI}>{playlistsData[playlistId].emoji}</span>
-									))}
-							</div>
-					))}
-				</div>
-			</div> */}
 			
 			<DisplaySavedPlaylists playlistsData={playlistsData} />
 
@@ -79,7 +92,10 @@ const Result = ({ playlistId, onRetake}: ResultProps) => {
 				id="retake-btn"
 				className="button" 
 				onClick={onRetake}
-				style={{ backgroundImage: `linear-gradient(90deg, #${playlistsData[playlistId].color[0]}, #${playlistsData[playlistId].color[1]}, #${playlistsData[playlistId].color[2]})`,}}
+				style={{
+					backgroundImage: `linear-gradient(90deg, #${playlistsData[playlistId].color[0]}, #${playlistsData[playlistId].color[1]}, #${playlistsData[playlistId].color[2]})`,
+					color: playlistsData[playlistId].btnWhite ? "#E6EFEF" : "#2D3047"
+				}}
 			>
 				{prefLang === "en" ? "Take the Quiz Again" : "もう一度クイズをする" }
 			</button>

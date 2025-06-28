@@ -10,9 +10,6 @@ interface DisplaySavedPlaylistsProps {
 const DisplaySavedPlaylists = ( { playlistsData }: DisplaySavedPlaylistsProps) => {
     const { prefLang } = useContext(LanguageContext);
 
-    const getUserPlaylists = localStorage.getItem("savedPlaylists");
-    const savedPlaylistsIds: string[] = getUserPlaylists ? JSON.parse(getUserPlaylists) : [];
-
     return (
         <section id="saved-playlists">
             <div id="saved-playlists-title">
@@ -24,7 +21,7 @@ const DisplaySavedPlaylists = ( { playlistsData }: DisplaySavedPlaylistsProps) =
                 </button>
             </div>
             <div id="swiper-holder">
-                <InsertSwiper playlistsData={playlistsData} savedPlaylistsIds={savedPlaylistsIds} />
+                <InsertSwiper playlistsData={playlistsData} />
             </div>
         </section>
     );

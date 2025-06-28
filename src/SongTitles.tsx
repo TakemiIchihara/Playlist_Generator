@@ -26,11 +26,11 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
 
 		useEffect(() => {
        setSongs(shuffleSongs(songTitles));
-			 console.log("this is triggered by songTitles");
+			//  console.log("this is triggered by songTitles");
     }, [songTitles]);
 
 		const newFontStyles = useMemo(() => {
-			console.log("this is triggered by songs");
+			// console.log("this is triggered by songs");
 			return songs.map(() => {
 				const fontSize = Math.floor(Math.random() * 10 + 14);
 				const fontWeight = Math.floor((Math.random() * 8) * 100 + 100);
@@ -40,7 +40,7 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
 
 		useEffect(() => {
 			setFontStyles(newFontStyles);
-			console.log("this is triggered by newFontStyles");
+			// console.log("this is triggered by newFontStyles");
 		}, [newFontStyles]);
 
     useEffect(() => {
@@ -56,7 +56,7 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
 
 			const newPositionStyles = songs.map((_, i) => {
 				const top = culmulativeTop;
-				culmulativeTop += heights[i] + 24;
+				culmulativeTop += heights[i] + 40;
 
 				if(i % 2 == 1) {
 					left = Math.random() * 80 + "px";
@@ -66,7 +66,7 @@ const SongTitles = ({ songTitles }: SongTitlesProps) => {
 				
 				return { top: top + "px", left: left + "px" }
 			})
-			console.log("this is triggered by fontStyles");
+			// console.log("this is triggered by fontStyles");
 
 			setPositionStyles(newPositionStyles);
 

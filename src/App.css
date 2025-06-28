@@ -1,14 +1,18 @@
 /*----- Universal Variables -----*/
 :root {
-	--black: #434A42;
-	--white: #e1e6eb;
+	--black: #2D3047;
+	--white: #E6EFEF;
+	--indigo: #00477A;
+	--blue: #77A6B6;
 	--cream: #FFF3DF;
 	--lt-pink: #FEEDDA;
 	--pink: #E36A74;
 	--lt-brown: #b47453;
 	--brown: #642601;
 	--dk-brown: #51230B;
-	--green: #8BAB5F;
+	--blue: #77A6B6;
+	--spotify-green: #1db954;
+	--apple-red:  #ff0436;
 	--yellow: #ffd587;
 	--cream-brown: #CBAA98;
 }
@@ -18,60 +22,55 @@
 	background-color: var(--white);
 	position: relative;
 }
-h1 {
-	font-size: 24px;
-}
 header, main, footer, #content {
 	position: relative;
 	z-index: 1;
 }
 .button {
-	height: 4rem;
-	width: 22rem;
-	border-radius: 32px 32px;
 	border: none;
 	margin: 0 auto;
-	background-color: #080e80;
-	font-size: 16px;
-	font-weight: 700;
-	color: var(--white);
 	box-shadow: inset 6px 6px 8px 2px rgba(0, 0, 0, 0.1), inset 4px 6px 4px rgba(0, 0, 0, 0.06);
 	cursor: pointer;
+}
+.bold {
+	font-weight: 700;
 }
 
 /*----- Contents -----*/
 /*--- Header ---*/
 header {
-	background: linear-gradient(#8BAB5FCC, #0E0A0900);
+	height: 56px;
+	display: grid;
+	align-items: center;
 }
 #header-holder {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	align-items: center;
-	gap: 4px;
-	height: 72px;
+	gap: 6px;
 	width: 25vw;
 	cursor: pointer;
+	color: var(--indigo);
 }
-header h1 {
-	font-size: 30px;
-	margin-left: 24px;
-}
-header #logo:nth-child(3) {
-	transform: translateX(-10px);
+header p {
+	font-size: 16px;
+	letter-spacing: .8px;
+	font-family: "Tilt Warp";
 }
 #logo {
-	height: 30px;
-	width: 30px;
+	height: 33px;
+	width: 33px;
+	margin-left: 16px;
 }
 
 /*--- main ---*/
-main,.loading-holder  {
+main, .loading-holder  {
 	min-height: calc(100vh - 72px);
 }
 
 /* Landing */
 #landing-holder, .question-holder {
-	min-height: calc(100vh - 72px);
+	min-height: calc(100vh - 56px);
 	display: grid;
 	grid-template-rows: .5fr .5fr;
 }
@@ -79,6 +78,27 @@ main,.loading-holder  {
 	margin-bottom: 72px;
 	text-align: center;
 	align-self: end;
+	line-height: 1.4;
+}
+#landing-holder button {
+	background: var(--indigo);
+	position: relative;
+	color: var(--white);
+}
+#arrow-right {
+	height: 30px;
+	width: 30px;
+	right: 40px;
+	position: absolute;
+	top: 50%;
+  transform: translateY(-50%);
+}
+#landing-holder button, .question-btns, #retake-btn {
+	height: 4rem;
+	width: 23rem;
+	font-size: 17px;
+	font-weight: 600;
+	border-radius: 35px 35px;
 }
 
 /* Questions */
@@ -88,7 +108,7 @@ main,.loading-holder  {
 	gap: 3vh;
 	text-align: center;
 	align-self: end;
-	margin-bottom: 88px;
+	margin-bottom: 64px;
 }
 .q-number {
 	font-size: 24px;
@@ -98,7 +118,6 @@ main,.loading-holder  {
 	font-weight: 500;
 	font-size: 22px;
 }
-
 .btns-holder {
 	display: flex;
 	flex-direction: column;
@@ -130,13 +149,15 @@ main,.loading-holder  {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 48px;
+	margin-top: 24px;
 }
 #title {
 	width: 100vw;
 }
 #title p {
-	margin-left: 24px;
+	text-align: center;
+	/* margin: 0 auto; */
+	/* margin-left: 24px; */
 }
 #playlist-title {
 	font-family: "Tilt Warp";
@@ -146,7 +167,7 @@ main,.loading-holder  {
 	text-align: center;
 }
 #main-iframe {
-	height: 48vh;
+	height: 50vh;
 	width: 93vw;
 	border: none;
 	margin-top: 5vh;
@@ -162,9 +183,11 @@ main,.loading-holder  {
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 88px;
+	top: 112px;
 	bottom: 0;
 	z-index: 0;
+	overflow-x: hidden;
+	overflow-y: visible;
 	filter: blur(2.3px);
 }
 .song-name {
@@ -173,7 +196,7 @@ main,.loading-holder  {
 
 /* swiper */
 #saved-playlists {
-	margin-top: 64px;
+	margin-top: 96px;
 	width: 100vw;
 }
 #saved-playlists-title {
@@ -199,19 +222,21 @@ main,.loading-holder  {
 }
 .swiper {
 	width: 100vw;
-	height: 312px;
+	height: 352PX;
 }
 .swiper-slide {
-	/* position: relative;
-	overflow: hidden; */
-	/* border-radius: 8px 8px; */
 	border: unset;
 	color: var(--white)
+}
+.swiper-slide-shadow-coverflow {
+	border-radius: 8px 8px;
+	height: 352PX !important;
+	background-image: unset;
 }
 .swiper-slide-bg {
 	position: relative;
 	overflow: hidden;
-	height: 192px;
+	height: 352px;
 	width: 100%;
 	border-radius: 8px 8px;
 }
@@ -221,8 +246,8 @@ main,.loading-holder  {
 	width: 150%;
 	height: 35vh;
 	position: absolute;
-	top: -80px;
-	left: -56px;
+	top: -32px;
+	left: -104px;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
@@ -238,23 +263,39 @@ main,.loading-holder  {
 .emoji-bg-row:nth-child(even) {
 	margin-left: 40px;
 }
-.swiper-slide h1 {
-	padding-left: 8px;
-	margin-top: 18px;
+.swiper-slide h2 {
+	font-size: 48px;
+	padding-left: 16px;
+	margin-top: 24px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	position: relative;
+	z-index: 1;
 }
-.swiper-slide iframe {
+.prev-number, .next-number {
 	position: absolute;
-	width: 80px;
-	height: 80px;
-	top: 88px;
-	right: 22px;
-	border: unset;
-	transform: scale(1.5) rotate(15deg);
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 128px;
+	color: var(--white);
+	opacity: .8;
+	font-weight: 500;
 }
-.swiper-slide-shadow-coverflow {
-	border-radius: 8px 8px;
-	height: 192px !important;
-	background-image: unset;
+.prev-number {
+	right: 5px;
+}
+.next-number {
+	left: 5px;
+}
+.playlist-status {
+	font-size: 20px;
+	font-weight: 500;
+	padding-left: 16px;
+	margin-top: 16px;
+	list-style: unset;
+}
+.playlist-status li:nth-child(2) {
+	margin-top: 8px;
 }
 .links {
 	display: flex;
@@ -262,17 +303,63 @@ main,.loading-holder  {
 	justify-content: center;
 	align-items: center;
 	gap: 16px;
-	margin-top: 24px;
+	margin-top: 72px;
 }
 .link-btns {
-	width: 128%;
-	height: 40px;
-	border-radius: 20px 20px;
-	border: unset;
+	height: 48px;
+	width: 288px;
+	border-radius: 30px 30px;
+	font-size: 16px;
+	font-weight: 500;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	text-align: left;
+	padding-left: 32px;
+	background: transparent;
 }
-.link-btns a {
-	text-decoration: none;
-	color: black;
+.link-btns::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background-color: var(--white);
+	box-shadow: inset 6px 6px 8px 2px rgba(0, 0, 0, 0.1), inset 4px 6px 4px rgba(0, 0, 0, 0.06);
+	opacity: .85;
+}
+.btn-content {
+	position: relative;
+	z-index: 1;
+}
+.right-arrow {
+	position: absolute;
+	left: -18px;
+	top: 50%;
+  transform: translateY(-50%);
+}
+.app-names { 
+	z-index: 1;
+	letter-spacing: .5px;
+}
+.spotify-color {
+	color: var(--spotify-green);
+}
+.apple-color {
+	color: var(--apple-red);
+}
+.app-logos {
+	position: absolute;
+	right: 40px;
+	transform: scale(4) rotate(15deg);
+}
+.spotify-logo {
+	top: 28px;
+}
+.apple-logo {
+	top: 24px;
 }
 
 
@@ -294,13 +381,3 @@ footer button {
 	font-size: 1rem;
 	width: 3rem;
 }
-
-
-@keyframes toLeft {
-        0% {
-          transform: translateX(100%);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
